@@ -13,21 +13,71 @@ for (let i = 0; i < nums.length - 2; i++) {
 }
 console.log(emptyArr);
 
-// 소수: 2부터 자기자신까지 나눴을때 나머지가 인 경우는 한가지. 자기자신
-emptyArr.forEach(e => {
-  for (let i = 2; i < e; i++) {
-    // console.log(e, typeof e);
-    // console.log(e%i, typeof e%i);
+// console.log(emptyArr[0]%3);
+// console.log(typeof emptyArr[0]%2);
 
-    if (e % i != 0) {
+// 소수: 2부터 자기자신까지 나눴을때 나머지가 인 경우는 한가지. 자기자신
+/* emptyArr.forEach(e => {
+  if (e === 2) {
+    cnt++;
+  }
+  else {
+
+    for (let i = 2; i < e; i++) {
+      // console.log('---');
       // console.log(e);
-      i == e-1 ? cnt++ : null;
+      // console.log(typeof e);
+      // console.log(i);
+      // console.log(typeof i);
+      // console.log(e%i); // 나머지가 출력이 잘됨
+      // console.log(typeof e%i); // / % 연산결과 항상 자료형 nan이 떠서 불가능
+      // console.log('---');
+
+      let index = i;
+      let element = e;
+
+      if (element % index != 0) {
+        if (index == element - 1) {
+          cnt++;
+        }
+      }
     }
+
   }
 });
-console.log(cnt);
+
+console.log(cnt); */
+
 // console.log(9%2 + 13%4);
 // console.log(typeof 9%2);
+
+/* console.log('==================================');
+let b = 22;
+let c = 32;
+let d = b%c;
+let e = b/c;
+console.log(d);
+console.log(typeof d);
+coksole.log(typeof e);
+console.log(typeof 434%11);
+ */
+
+
+let n = [5, 6, 7];
+for(let i=0; i<n.length; i++){
+
+  for(let j=2; j<n[i]; j++){
+    let target = n[i];
+    let divisor = j;
+    console.log(target%divisor);
+    console.log(typeof target%divisor);
+    if(target%divisor == 0){
+      console.log(true);
+    }
+  }
+
+}
+
 
 
 
