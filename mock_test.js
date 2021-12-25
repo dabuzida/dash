@@ -41,7 +41,6 @@ function solution(answers) {
     indexCollection.sort((a, b) => {return a - b});
     console.log(indexCollection);
     // return indexCollection;
-    console.log(Math.max(33,12,56,0));
 }
 
 
