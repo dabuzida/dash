@@ -1,0 +1,1 @@
+console.log([2,3411,1,332].sort((a, b) => {return a - b;}));
