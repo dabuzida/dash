@@ -9,7 +9,20 @@ let arr = [...new Set(nums)];
 // console.log(Boolean(""));
 
 
-nums.sort((a, b) => {return a - b;});
-console.log(nums);
+// nums.sort((a, b) => {return a - b;});
+
+// console.log(nums);
+
+let arrByNumByCnt = new Array(2).fill(0);
+console.log(arrByNumByCnt)
+
+
+
+// console.log(nums+1);
+
+// let x = [1,2,3];
+// x = x.concat([2,2,2,2,]);
+// console.log(x);
+
 
 
