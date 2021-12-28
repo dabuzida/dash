@@ -4,7 +4,12 @@ let arr = [...new Set(nums)];
 
 // let x = new Array(200000).fill(0);
 // let x = new Array(2);
-console.log(arr);
 
+// let x = prompt()
+// console.log(Boolean(""));
+
+
+nums.sort((a, b) => {return a - b;});
+console.log(nums);
 
 
