@@ -1,27 +1,25 @@
-/* 
-N: 1~500
-stages길이: 1~200,000
-stages 값: 1~N+1 << 목표
+let n = 33453234;
+let m = n;
+let arr = [];
+let result = 0;
 
-0 <= Math.random() <1
-
-
-0 <= Math.random()*N < N
- */
-
-// let N = 100;
-// let temp = [];
-// for(let i=0; i<1000; i++){
-//     let n = Math.floor(Math.random()*N);
-//     temp.push(n);
-// }
-// console.log(temp);
-let N = 500;
-
-for(let i=0; i<1000; i++){
-    let x = Math.random()*(N+1)+1;
-    let y = Math.floor(x);
-    if(y<=0 || y>=502){
-        console.log(y);
-    }
+while (n >= 3) {
+    
+    
+    let remainder = n%3;
+    arr.unshift(remainder);
+    n = Math.floor(n/3);
 }
+n == 2 ? arr.unshift(2) : arr.unshift(1);
+
+console.log(arr);
+arr.reverse();
+console.log(arr);
+
+while(arr.length > 0){
+    result += (3**(arr.length-1)) * arr.shift();
+
+    // console.log(result);
+}
+
+m === 2 ? console.log(m) : console.log(result);
