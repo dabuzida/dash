@@ -4,8 +4,6 @@ let arr = [];
 let result = 0;
 
 while (n >= 3) {
-    
-    
     let remainder = n%3;
     arr.unshift(remainder);
     n = Math.floor(n/3);
@@ -16,7 +14,7 @@ console.log(arr);
 arr.reverse();
 console.log(arr);
 
-while(arr.length > 0){
+while (arr.length > 0) {
     result += (3**(arr.length-1)) * arr.shift();
 
     // console.log(result);
