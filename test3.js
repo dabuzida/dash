@@ -10,7 +10,7 @@ let xx;
 console.log(Math.floor(-3.5));
 console.log(Math.trunc(-3.5)); */
 
-function multiplyNumeric(obj) {
+/* function multiplyNumeric(obj) {
 	for (let key in obj) {
 		if (typeof obj[key] === 'number') {
 			obj[key] *= 2;
@@ -25,4 +25,12 @@ let menu = {
 };
 
 multiplyNumeric(menu);
-console.log(menu);
+console.log(menu); */
+
+let user = {
+	name: 'John',
+	age: 30,
+};
+
+let clone = Object.assign({}, user);
+console.log(user === clone); // true, 같은 객체입니다.
