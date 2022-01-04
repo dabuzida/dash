@@ -34,3 +34,7 @@ console.log('bye');
 
 const aa = 'single';
 const daa = 'goodbye';
+
+let x = 'xaskfjksdlj';
+console.log(x.substring(3, 4));
+console.log(x);
