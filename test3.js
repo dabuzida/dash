@@ -37,13 +37,21 @@ console.log(user === clone); // true, 같은 객체입니다. */
 
 let x = 'computer';
 
-const dartResult = '0S2D*3T'; //  37
-let y = dartResult.search(/[^^0-10]/g);
-// let y = dartResult.search(/2/);
+const dartResult = '10S2D*3T'; //  37
 
-// console.log(dartResult.substring(y, y + 1));
+let y = dartResult.replace(/[^0-9]/g, " ");
 
-// let z = dartResult.indexOf(y);
+
+let arr = y.split(" ");
+console.log(arr)
+
+let ni = arr.filter(e => e.length > 0);
+console.log(ni);
+
 
 console.log(y);
+console.log(arr);
+
+
+// console.log(parseInt(y));
 // console.log(z);

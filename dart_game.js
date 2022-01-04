@@ -1,5 +1,6 @@
-const dartResult = '1S2D*3T'; //  37
+// const dartResult = '1S2D*3T'; //  37
 // const dartResult = '1D2S#10S'; // 9
+const dartResult = '10D10S#10S'; // 9
 // const dartResult = '1D2S0T'; //  3
 // const dartResult = '1S*2T*3S'; //  23
 // const dartResult = '1D#2S*3S'; //  5
@@ -12,18 +13,19 @@ const dartResult = '1S2D*3T'; //  37
 // 3부터 끝까지 스트링을 sub3로 할당
 
 // 첫번째수 색인: 0, 마지막은 lastindexof 두번째는 색인0 자르고 indexof
-const index1stNum = 0;
-const index2ndNum;
-const index3rdNum;
-let tempStr = dartResult.substring(1, dartResult.length);
-let whereNum= tempStr.search(/[0-10]/g);
+let index1stNum = 0;
+let index2ndNum;
+let index3rdNum;
+
+let xx = dartResult.replace(/[^0-9]/g, " ");
+let yy = xx.split(" ");
+let zz = yy.filter(e => e.length > 0);
+console.log(yy);
+console.log(zz);
+
+// let aa = 
 
 
-let x = dartResult.search(/[0-10]/g);
-console.log(x);
-
-let tempStr = dartResult.substring(1, dartResult.length);
-console.log(tempStr);
 
 
 
