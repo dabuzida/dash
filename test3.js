@@ -27,10 +27,23 @@ let menu = {
 multiplyNumeric(menu);
 console.log(menu); */
 
-let user = {
+/* let user = {
 	name: 'John',
 	age: 30,
 };
 
 let clone = Object.assign({}, user);
-console.log(user === clone); // true, 같은 객체입니다.
+console.log(user === clone); // true, 같은 객체입니다. */
+
+let x = 'computer';
+
+const dartResult = '0S2D*3T'; //  37
+let y = dartResult.search(/[^^0-10]/g);
+// let y = dartResult.search(/2/);
+
+// console.log(dartResult.substring(y, y + 1));
+
+// let z = dartResult.indexOf(y);
+
+console.log(y);
+// console.log(z);
