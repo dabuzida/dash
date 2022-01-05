@@ -16,12 +16,17 @@ for (let i = 2; i <= n; i++) {
 	let limitIndex = pNALTN.findIndex(e => e > Math.floor(Math.sqrt(i))); // - 1;
 	let checkArray = pNALTN.slice(0, limitIndex);
 	console.log(i, limitIndex + ' <=====> ' + checkArray);
+	let cnt = 0;
 	for (let j = 0; j < checkArray.length; j++) {
-		if (i % checkArray[j] === 0) {
-			break;
+		if (i % checkArray[j] !== 0) {
+			cnt++;
+			// break;
 		}
-		pNcol.push(i);
+		if (cnt === checkArray.length) {
+			pNcol.push(i);
+		}
 	}
+	cnt = 0;
 
 	// for (let j = 2; j <= Math.sqrt(i); j++) {
 	// 	// 2부터 i의 제곱근까지 모두 나눠보는게 아니라
@@ -34,7 +39,12 @@ for (let i = 2; i <= n; i++) {
 	// 	}
 	// }
 }
-
+if (n > 1) {
+	pNcol.unshift(3);
+	pNcol.unshift(2);
+} else if (n > 2) {
+	pNcol.unshift(3);
+}
 console.log(pNcol);
 
 function findPNumLTN(n) {
