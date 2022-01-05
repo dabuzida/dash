@@ -1,5 +1,5 @@
 // const n = 1000000;
-const n = 12;
+const n = 100;
 
 const pNALTN = findPNumLTN(n);
 
@@ -46,6 +46,8 @@ if (n > 1) {
 	pNcol.unshift(3);
 }
 console.log(pNcol);
+console.log(pNcol.length);
+
 
 function findPNumLTN(n) {
 	let primeList = [];
