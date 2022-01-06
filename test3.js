@@ -35,7 +35,7 @@ console.log(menu); */
 let clone = Object.assign({}, user);
 console.log(user === clone); // true, 같은 객체입니다. */
 
-let x = 'computer';
+/* let x = 'computer';
 
 const dartResult = '10S2D*3T'; //  37
 
@@ -50,8 +50,11 @@ console.log(ni);
 
 
 console.log(y);
-console.log(arr);
-
+console.log(arr); */
 
 // console.log(parseInt(y));
 // console.log(z);
+
+let a = [1, 2, 3, 4, 5];
+let x = a.splice(2, 1);
+console.log(a);
