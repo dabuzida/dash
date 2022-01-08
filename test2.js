@@ -39,3 +39,47 @@ console.log(z); */
 var x = 15;
 
 console.log(typeof x.toString(2));
+
+
+/* const arr = [1, 2, 3, 4, 5];
+const arr2 = [0, 2, 4, 6, 8];
+let largeArr;
+let smallArr;
+let hashTable = {};
+let i = 0;
+let ans = [];
+if (arr.length > arr2.length) {
+    largeArr = arr;
+    smallArr = arr2;
+} else {
+    largeArr = arr2;
+    smallArr = arr;
+}
+
+for (const e of largeArr) {
+    hashTable[e] = true;
+}
+console.log(hashTable);
+
+for (const e of smallArr) {
+    if (hashTable[e]) {
+        ans[i] = e;
+        i++;
+    }
+}
+console.log(ans); */
+/* 
+const xx = ['a', 'b', 'c', 'd', 'e', 'c', 'f', 'g', 'v'];
+let hashTable = {};
+for (const val of xx) {
+    if (hashTable[val]) {
+        console.log(val);
+    } else {
+        hashTable[val] = true;
+    }
+} */
+
+let xx = 'asss';
+for (const val of xx) {
+    console.log(val);
+}
