@@ -1,3 +1,5 @@
+const { reverse } = require('lodash');
+
 var items = [
 	{ name: 'Edward', value: 21 },
 	{ name: 'Sharpe', value: 37 },
@@ -21,4 +23,18 @@ items.sort(function (a, b) {
 	return 0;
 });
 
-console.log(items);
+// console.log(items);
+
+const str = 'abcde';
+let stack = [];
+for (let i = 0; i < str.length; i++) {
+	stack.push(str[i]);
+}
+console.log(stack);
+
+let reverseStr = '';
+for (let i = stack.length - 1; i > -1; i--) {
+	reverseStr += stack[i];
+}
+
+console.log(reverseStr);
