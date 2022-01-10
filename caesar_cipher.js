@@ -1,40 +1,30 @@
 // let s = 'a B z'; //"e F d"
 // const n = 4;
-let s = 'AB'; //"BC"
-const n = 1;
-// let s = 'a B dskfdsk    KDz SAFSDE'; //"BC"
-// const n = 4;
+// let s = 'AB'; //"BC"
+// const n = 1;
+let s = 'a B dskfdsk    KDz SAFSDE'; //"BC"
+const n = 4;
+
+let arrayS = s.split('');
 
 let lowerAlphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 let upperAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-let matchLowerCase = s.match(/[a-z]/g);
-let set = new Set(matchLowerCase);
-
-let matchUpperCase = s.match(/[A-Z]/g);
-let set2 = new Set(matchUpperCase);
-let ConversionList = [...set, ...set2];
-
-console.log(ConversionList);
-
-for (let i = 0; i < ConversionList.length; i++) {
-	let regExp = new RegExp(ConversionList[i], 'g');
-	let targetSpelling;
-	if (checkCase(ConversionList[i])) {
-		let index = lowerAlphabet.indexOf(ConversionList[i]);
-		targetSpelling = lowerAlphabet[(index + n) % 26];
+for (let i = 0; i < arrayS.length; i++) {
+	if (arrayS[i] == ' ') {
+		continue;
+	} else if (checkCase(arrayS[i])) {
+		let index = lowerAlphabet.indexOf(arrayS[i]);
+		arrayS[i] = lowerAlphabet[(index + n) % 26];
 	} else {
-		let index = upperAlphabet.indexOf(ConversionList[i]);
-		targetSpelling = upperAlphabet[(index + n) % 26];
+		let index = upperAlphabet.indexOf(arrayS[i]);
+		arrayS[i] = upperAlphabet[(index + n) % 26];
 	}
-
-	s = s.replace(regExp, targetSpelling);
 }
-
+s = arrayS.join('');
 console.log(s);
 
 function checkCase(string) {
-	// let lowerAlphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 	return lowerAlphabet.includes(string);
 }
 

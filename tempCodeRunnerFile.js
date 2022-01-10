@@ -1,1 +1,2 @@
-const s = 'a B z'; //"BC"
+; //"BC"
+const n = 1;

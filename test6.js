@@ -24,7 +24,7 @@ items.sort(function (a, b) {
 });
 
 // console.log(items);
-
+/* 
 const str = 'abcde';
 let stack = [];
 for (let i = 0; i < str.length; i++) {
@@ -37,4 +37,4 @@ for (let i = stack.length - 1; i > -1; i--) {
 	reverseStr += stack[i];
 }
 
-console.log(reverseStr);
+console.log(reverseStr); */
