@@ -1,5 +1,3 @@
-const { reverse } = require('lodash');
-
 var items = [
 	{ name: 'Edward', value: 21 },
 	{ name: 'Sharpe', value: 37 },
@@ -38,3 +36,93 @@ for (let i = stack.length - 1; i > -1; i--) {
 }
 
 console.log(reverseStr); */
+/* const n = 118372;
+let numberByDigit = ('' + n).split('');
+
+let x = +('' + n).split('').sort().join(''); */
+
+// const n = 3;
+// const m = 12; // [최대공약수, 최소공배수]
+// const n = 2;
+// const m = 5;
+
+const n = 18;
+const m = 24;
+
+let gcf; //greatestCommonFactor;
+let lcm; //leastCommonMultiple;
+
+// if (Math.floor(n / m) === n / m) {
+// 	lcm = n;
+// } else if (Math.floor(m / n) === m / n) {
+// 	lcm = m;
+// } else {
+// 	lcm = m * n;
+// }
+
+///////////////////////////////////////////////////
+
+let nFactor = createFactor(n).sort((a, b) => {
+	if (a > b) {
+		return -1;
+	}
+});
+let mFactor = createFactor(m).sort((a, b) => {
+	if (a > b) {
+		return -1;
+	}
+});
+
+console.log(nFactor);
+console.log(mFactor);
+
+if (n > m) {
+	for (let i = 0; i < mFactor.length; i++) {
+		if (nFactor.includes(mFactor[i])) {
+			console.log(mFactor[i]);
+			gcf = mFactor[i];
+			break;
+		}
+	}
+} else {
+	for (let i = 0; i < nFactor.length; i++) {
+		if (mFactor.includes(nFactor[i])) {
+			console.log(nFactor[i]);
+			gcf = nFactor[i];
+			break;
+		}
+	}
+}
+
+lcm = (m * n) / gcf;
+console.log(gcf, lcm);
+// return [gcf, lcm];
+
+function createFactor(number) {
+	let smallFactor = [];
+	let bigFactor = [];
+	let factor = [];
+
+	for (let i = 2; i <= Math.sqrt(number); i++) {
+		if (number % i === 0) {
+			smallFactor.push(i);
+		}
+	}
+
+	for (let i = 0; i < smallFactor.length; i++) {
+		bigFactor.push(number / smallFactor[i]);
+	}
+
+	factor = [...smallFactor, ...bigFactor];
+	// factor.unshift(1);
+	factor.push(1, number);
+	return factor;
+}
+
+/* console.log(
+	[1, 11, 9, 22].sort((a, b) => {
+		if (a > b) {
+			return -1;
+		}
+	}),
+); */
