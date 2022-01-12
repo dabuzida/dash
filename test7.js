@@ -62,22 +62,30 @@ console.log(ans); */
 // 	console.log(22);
 // }
 
-const array = [1, 3, 4, 7, 10];
-function evenArray(array, ans = []) {
-	if (!array.length) {
-		return ans;
-	}
-	if (!(array[0] % 2)) {
-		ans.push(array[0]);
-		evenArray(array.slice(1), ans);
-	} else {
-		evenArray(array.slice(1), ans);
+// const array = [1, 3, 4, 7, 10];
+function evenArray(array) {
+	// if (array.length === 1) {
+	// 	return array[0] % 2 ? null :
+	// }
+	// return array[0] % 2 ? evenArray(array.slice(1)) : evenArray(array.slice(1)).push(array[0]);
+
+	if (array.length === 1) {
+		if (array[0] % 2 === 1) {
+			return [];
+		} else if (array[0] % 2 === 0) {
+			return [array[0]];
+		}
 	}
 
-	// return !(array[0] % 2) ? ans.push(array[0]) + evenArray(array.slice(1)) : evenArray(array.slice(1));
+	if (array[0] % 2 === 1) {
+		return evenArray(array.slice(1));
+	} else if (array[0] % 2 === 0) {
+		return [...evenArray(array.slice(1)), array[0]];
+	}
 }
+// return !(array[0] % 2) ? ans.push(array[0]) + evenArray(array.slice(1)) : evenArray(array.slice(1));
 
-let x = evenArray(array);
+let x = evenArray([1, 3, 4, 7, 10, 2777]);
 console.log(x);
 
 // for (let i = 1; i < 6; i++) {
@@ -86,6 +94,20 @@ console.log(x);
 // 	}
 // }
 
-if (!0) {
-	console.log(32323);
+// if (!0) {
+// 	console.log(32323);
+// }
+
+function selectEven(array) {
+	if (array.length === 0) {
+		return [];
+	}
+
+	if (array[0] % 2 === 0) {
+		return [array[0]].concat(selectEven(array.slice(1)));
+	} else {
+		return selectEven(array.slice(1));
+	}
 }
+
+console.log(selectEven([1, 2, 3, 4, 22, 11]));
