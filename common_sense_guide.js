@@ -4,6 +4,8 @@
 2. 하위문제 찾기
 3. 하위문제를 구현된 함수에 적용하면 어떻게 될지 생각
 4. 3번 생각할때 기저조건 생각
+
+5. memoization, 상향식으로 불필요한 함수 호출을 줄이자
 */
 
 /* 
@@ -95,31 +97,18 @@ const test = golomb(3);
 console.log(test); */
 
 // 12장 3번
-let m = 3;
+/* let m = 3;
 let n = 7;
 function paths(m, n, memo = {}) {
 	console.log(memo);
 	if (m === 1 || n === 1) {
 		return 1;
 	} else if (!(`${m}, ${n}` in memo)) {
+		// 백틱 말고 '\m, \n' 이런식으로 안되나?
 		memo[`${m}, ${n}`] = paths(m - 1, n, memo) + paths(m, n - 1, memo);
 		return memo[`${m}, ${n}`];
 	}
 	return memo[`${m}, ${n}`];
 }
 const test = paths(m, n);
-console.log(test);
-
-/* function uniquePaths(rows, columns) {
-	if (rows === 1 || columns === 1) {
-		return 1;
-	}
-
-	return uniquePaths(rows - 1, columns) + uniquePaths(rows, columns - 1);
-}
-
-let aa = uniquePaths(3, 4);
-console.log(aa); */
-
-// 객체 프로퍼티 접근 시 프로퍼티 키의 자료형 숫자 안되는지ㅏ
-// 백틱 말고 ''와 \m \n 이용 불가능?
+console.log(test); */
