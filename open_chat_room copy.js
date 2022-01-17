@@ -8,30 +8,12 @@ const record = [
 // ["Prodo님이 들어왔습니다.", "Ryan님이 들어왔습니다.", "Prodo님이 나갔습니다.", "Prodo님이 들어왔습니다."]
 
 let hashMap = {};
+let idArray = record.map(e => e.split(' ')[1]);
 let separationBySyllable = record.map(e => e.split(' '));
-console.log(separationBySyllable);
 
-// let idArray = separationBySyllable.filter(e => {
-// 	if (e[0] !== 'Leave') {
-// 		return 2;
-// 	}
-// });
-let idArray = [];
-for (const val of separationBySyllable) {
-	if (val[0][0] === 'L') {
-		idArray.push(0);
-	} else {
-		idArray.push(val[1]);
-	}
-}
 console.log(idArray);
 
-const nonDuplIdSet = new Set(idArray);
-nonDuplIdSet.forEach(e => {
-	if (e === 0) {
-		nonDuplIdSet.delete(e);
-	}
-});
+const nonDuplIdSet = [...new Set(idArray)];
 console.log(nonDuplIdSet);
 
 nonDuplIdSet.forEach(e => {
@@ -46,9 +28,9 @@ console.log(hashMap);
 
 let result = [];
 for (const val of separationBySyllable) {
-	if (val[0][0] === 'E') {
+	if (val[0] === 'Enter') {
 		result.push(`${hashMap[val[1]]}님이 들어왔습니다.`);
-	} else if (val[0][0] === 'L') {
+	} else if (val[0] === 'Leave') {
 		result.push(`${hashMap[val[1]]}님이 나갔습니다.`);
 	}
 }

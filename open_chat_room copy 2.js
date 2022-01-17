@@ -17,11 +17,11 @@ console.log(separationBySyllable);
 // 	}
 // });
 let idArray = [];
-for (const val of separationBySyllable) {
-	if (val[0][0] === 'L') {
+for (let i = 0; i < separationBySyllable.length; i++) {
+	if (separationBySyllable[i][0] === 'Leave') {
 		idArray.push(0);
 	} else {
-		idArray.push(val[1]);
+		idArray.push(separationBySyllable[i][1]);
 	}
 }
 console.log(idArray);
@@ -45,11 +45,11 @@ for (const key in hashMap) {
 console.log(hashMap);
 
 let result = [];
-for (const val of separationBySyllable) {
-	if (val[0][0] === 'E') {
-		result.push(`${hashMap[val[1]]}님이 들어왔습니다.`);
-	} else if (val[0][0] === 'L') {
-		result.push(`${hashMap[val[1]]}님이 나갔습니다.`);
+for (let i = 0; i < separationBySyllable.length; i++) {
+	if (separationBySyllable[i][0] === 'Enter') {
+		result.push(`${hashMap[separationBySyllable[i][1]]}님이 들어왔습니다.`);
+	} else if (separationBySyllable[i][0] === 'Leave') {
+		result.push(`${hashMap[separationBySyllable[i][1]]}님이 나갔습니다.`);
 	}
 }
 console.log(result);

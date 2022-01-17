@@ -1,1 +1,2 @@
-['22,33']
+hMap[`${e}`] = idArray.lastIndexOf(`${e}` || `${e}`);
+});
