@@ -1,55 +1,40 @@
-const record = [
+let record = [
 	'Enter uid1234 Muzi',
 	'Enter uid4567 Prodo',
 	'Leave uid1234',
 	'Enter uid1234 Prodo',
 	'Change uid4567 Ryan',
-];
-// ["Prodo님이 들어왔습니다.", "Ryan님이 들어왔습니다.", "Prodo님이 나갔습니다.", "Prodo님이 들어왔습니다."]
+]; // ["Prodo님이 들어왔습니다.", "Ryan님이 들어왔습니다.", "Prodo님이 나갔습니다.", "Prodo님이 들어왔습니다."]
 
+// 순회를 해야한다면 한번 할때 갖은 정보를 모두 얻어내야 함
+const act = {
+	E: '님이 들어왔습니다.',
+	L: '님이 나갔습니다.',
+};
 let hashMap = {};
-let separationBySyllable = record.map(e => e.split(' '));
-console.log(separationBySyllable);
-
-// let idArray = separationBySyllable.filter(e => {
-// 	if (e[0] !== 'Leave') {
-// 		return 2;
-// 	}
-// });
-let idArray = [];
-for (const val of separationBySyllable) {
-	if (val[0][0] === 'L') {
-		idArray.push(0);
-	} else {
-		idArray.push(val[1]);
-	}
-}
-console.log(idArray);
-
-const nonDuplIdSet = new Set(idArray);
-nonDuplIdSet.forEach(e => {
-	if (e === 0) {
-		nonDuplIdSet.delete(e);
-	}
-});
-console.log(nonDuplIdSet);
-
-nonDuplIdSet.forEach(e => {
-	hashMap[`${e}`] = idArray.lastIndexOf(`${e}` || `${e}`);
-});
-console.log(hashMap);
-
-for (const key in hashMap) {
-	hashMap[key] = separationBySyllable[hashMap[key]][2];
-}
-console.log(hashMap);
-
 let result = [];
-for (const val of separationBySyllable) {
-	if (val[0][0] === 'E') {
-		result.push(`${hashMap[val[1]]}님이 들어왔습니다.`);
-	} else if (val[0][0] === 'L') {
-		result.push(`${hashMap[val[1]]}님이 나갔습니다.`);
+for (let i = 0; i < record.length; i++) {
+	let element;
+	let initial = record[i].split(' ')[0][0];
+	let id = record[i].split(' ')[1];
+
+	if (initial === 'E') {
+		element = [id, act[initial]];
+		hashMap[id] = record[i].split(' ')[2];
+	} else if (initial === 'L') {
+		element = [id, act[initial]];
+	} else if (initial === 'C') {
+		hashMap[id] = record[i].split(' ')[2];
 	}
+
+	if (element) {
+		result.push(element);
+	}
+}
+console.log(result);
+console.log(hashMap);
+
+for (let i = 0; i < result.length; i++) {
+	result[i] = hashMap[result[i][0]] + result[i][1];
 }
 console.log(result);
