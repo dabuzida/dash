@@ -41,3 +41,29 @@ console.log((0.2 * 50).toFixed(20)); */
 for (let i = 0; i < 10; i++) {
 	console.log(randomInteger(-1, 3));
 } */
+
+let s = 'baabaa';
+let pos = 1;
+let target = s.slice(pos, pos + 2);
+let regExp = new RegExp(target);
+s.replace(regExp, '2');
+// console.log(s);
+
+let ss = 'aaaaaaaaabxxxxxxxxxxxfiiaaaaaaaaa';
+console.log(ss, ss.length);
+
+// let x = ss.replace(/[aix]{2,}/g, '^');
+// console.log(x);
+
+let y = ss.replace(/[ab]{2,}/g, '^');
+console.log(y);
+// console.log('=========================================');
+
+// const targetStr = 'AABBZZAaBb';
+
+// // 'A' ~ 'Z'가 한번 이상 반복되는 문자열을 반복 검색
+// // 'A', 'AA', 'AAA', ... 또는 'B', 'BB', 'BBB', ... ~ 또는 'Z', 'ZZ', 'ZZZ', ...
+
+// const regexr = /[A-Z]+/g;
+
+// console.log(targetStr.match(regexr)); //

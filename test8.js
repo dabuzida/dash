@@ -16,3 +16,35 @@ console.log(Boolean(student[22]));
 console.log(student[22]);
 console.log(student[33]);
 console.log(student); */
+// let progresses = [95, 90, 99, 99, 80, 99];
+// let speeds = [1, 1, 1, 1, 1, 1];
+
+let s = 'baabaa'; //1
+
+while (checkRepetition(s)) {
+	let pos;
+	for (let i = 0; i < s.length - 1; i++) {
+		if (s[i] === s[i + 1]) {
+			pos = i;
+			break;
+		}
+	}
+
+	let target = s.slice(pos, pos + 2);
+	let regExp = new RegExp(target);
+	s = s.replace(regExp, '');
+}
+
+let target = s.slice(pos, pos + 2);
+s = s.replace(target, '');
+
+console.log(s.length === 0);
+
+function checkRepetition(s) {
+	for (let i = 0; i < s.length - 1; i++) {
+		if (s[i] === s[i + 1]) {
+			return true;
+		}
+	}
+	return false;
+}
