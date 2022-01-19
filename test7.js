@@ -49,13 +49,13 @@ let regExp = new RegExp(target);
 s.replace(regExp, '2');
 // console.log(s);
 
-let ss = 'aaaaaaaaabxxxxxxxxxxxfiiaaaaaaaaa';
+let ss = 'aaaaaaaaa bd xxxxxxxxxxxfiiaaaaaaaaa';
 console.log(ss, ss.length);
 
 // let x = ss.replace(/[aix]{2,}/g, '^');
 // console.log(x);
 
-let y = ss.replace(/[ab]{2,}/g, '^');
+let y = ss.replace(/[a-z]{2,}/g, '=');
 console.log(y);
 // console.log('=========================================');
 
@@ -67,3 +67,7 @@ console.log(y);
 // const regexr = /[A-Z]+/g;
 
 // console.log(targetStr.match(regexr)); //
+
+let a = 'saa';
+let b = 'saa';
+console.log(a === b);
