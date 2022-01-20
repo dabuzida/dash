@@ -13,9 +13,12 @@ while (1) {
 		let regExp = new RegExp(`${char}{2}`, 'g');
 		s = s.replace(regExp, '');
 	}
-	if (s === temp) {
+	if (!s.split('').some((e, id, array) => e == array[id + 1])) {
 		break;
 	}
+	// if (s === temp) {
+	// 	break;
+	// }
 }
 
 console.log('답: ', s, s.length);

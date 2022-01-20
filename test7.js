@@ -57,7 +57,7 @@ console.log(ss, ss.length);
 
 let y = ss.replace(/[a-z]{2,}/g, '=');
 console.log(y);
-// console.log('=========================================');
+console.log('########################################################');
 
 // const targetStr = 'AABBZZAaBb';
 
@@ -68,6 +68,19 @@ console.log(y);
 
 // console.log(targetStr.match(regexr)); //
 
-let a = 'saa';
-let b = 'saa';
-console.log(a === b);
+function ask(num, yes, no) {
+	yes();
+	no();
+	// if (num) yes();
+	// else no();
+}
+
+ask(
+	0,
+	function good() {
+		console.log('동의하셨습니다.');
+	},
+	function () {
+		console.log('취소 버튼을 누르셨습니다.');
+	},
+);
