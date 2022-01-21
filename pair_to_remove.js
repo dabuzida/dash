@@ -1,34 +1,43 @@
-let s = 'baabaxillixa';
-let uniqueChar = new Set(s.split(''));
-uniqueChar = [...uniqueChar];
+// let s = 'bbaabaxi7llixa';
+let s = 'bbabba';
+s = s.split('');
+let ans = [];
 
-console.log(uniqueChar);
-
-console.log(s);
-
-while (1) {
-	let temp = s.slice(0);
-	for (let i = 0; i < uniqueChar.length; i++) {
-		let char = uniqueChar[i];
-		let regExp = new RegExp(`${char}{2}`, 'g');
-		s = s.replace(regExp, '');
+for (let i = 0; i < s.length; i++) {
+	let lastVal = ans[ans.length - 1];
+	if (lastVal === s[i]) {
+		ans.pop();
+	} else {
+		ans.push(s[i]);
 	}
-	if (!s.split('').some((e, id, array) => e == array[id + 1])) {
-		break;
-	}
-	// if (s === temp) {
-	// 	break;
-	// }
 }
 
-console.log('답: ', s, s.length);
+console.log(ans);
 
-// let x = s.split('').filter((val, i) => );
+/* 
+// let s = 'bbaabaxi7llixa';
+let s = 'bbabba';
 
-/* let x = 'aaeaaasdfsadfaaaaa';
-let char = alphabet[0];
-let regExp = new RegExp(`${char}{2}`, 'g');
+// s에서 존재하는 알파벳만 순회
+// const subletter = [...new Set(s)];
+// console.log(subletter);
 
-console.log(x);
-x = x.replace(regExp, '');
-console.log(x); */
+// 그냥 a~z까지 전부 순회
+// const letter = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+for (let i = 0; i < s.length - 1; ) {
+	if (i < 0) {
+		i = 0;
+	}
+	let sample1 = s[i] + s[i + 1];
+	let sample2 = s[i] + s[i];
+	if (sample1 == sample2) {
+		let regExp = new RegExp(`${sample2}`, 'g');
+		s = s.replace(regExp, '');
+		// i = i == 0 ? i : --i;
+	} else {
+		i++;
+	}
+}
+console.log(s.length, s);
+ */
