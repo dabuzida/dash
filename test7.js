@@ -49,14 +49,14 @@ for (let i = 0; i < 10; i++) {
 // s.replace(regExp, '2');
 // console.log(s);
 
-let ss = 'aaaaaaaaa bd xxxxxxxxxxxfiiaaaaaaaaa';
-console.log(ss, ss.length);
+// let ss = 'aaaaaaaaa bd xxxxxxxxxxxfiiaaaaaaaaa';
+// console.log(ss, ss.length);
 
 // let x = ss.replace(/[aix]{2,}/g, '^');
 // console.log(x);
 
 // let y = ss.replace(/[a-z]{2,}/g, '=');
-let y = ss.replace(/a{2,}/g, '=');
+/* let y = ss.replace(/a{2,}/g, '=');
 console.log(y);
 console.log('########################################################');
 
@@ -76,4 +76,14 @@ for (let i = 0; i < s.length; i++) {
 let set1 = new Set([1, 2, 3]);
 let set2 = new Set('bbaabaxi7llixa');
 console.log(set1);
-console.log(set2);
+console.log(set2); */
+
+let x = [1, 2, 3, 5];
+function change(array) {
+	let temp = array[3];
+	array[3] = array[0];
+	array[0] = temp;
+	return;
+}
+change(x);
+console.log(x);
