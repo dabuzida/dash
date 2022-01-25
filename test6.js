@@ -192,8 +192,9 @@ for (const key in x) {
 }
 console.log(ans); */
 
-// let x = [2, 1, 445, 223, 34252345, 3423, 22, 143, 523];
-// let max = x[0];
+let x = [2, 1, 445, 223, 34252345, 3423, 22, 143, 523];
+let max = x[0];
+
 // for (let i = 1; i < x.length; i++) {
 // 	if (x[i] > max) {
 // 		max = x[i];
@@ -201,15 +202,13 @@ console.log(ans); */
 // }
 // console.log(max);
 
-// x.sort((a, b) => (a < b ? -1 : 1));
-// x.sort((a, b) => a - b);
+// x.sort((a, b) => {
+// 	console.log(a, b);
+// 	return a < b ? -1 : 1;
+// });
 
-// console.log(x[x.length - 1]);
-/* let max = x[0] ** 2;
-for (let i = 1; i < x.length; i++) {
-	for (let j = 1; j < x.length; j++) {
-		if (i == j && x[i]) {
-		}
-	}
-}
- */
+x.sort((a, b) => {
+	console.log(a, b);
+	return a - b;
+});
+console.log(x[x.length - 1]);
