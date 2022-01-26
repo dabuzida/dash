@@ -2,10 +2,13 @@ let student = {
 	id: 23,
 	name: 'Kim',
 	age: 33,
-	major: 'computer',
-	22: 'hi',
+	major: 'computer engineering',
+	hobby: 'football',
 };
 
+for (const key in student) {
+	console.log(`${key}: ${student[key]}`);
+}
 let x = 22;
 let y = 33;
 student[[x, y]] = 555;
