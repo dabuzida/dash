@@ -1,4 +1,4 @@
-let student = {
+/* let student = {
 	id: 23,
 	name: 'Kim',
 	age: 33,
@@ -18,4 +18,4 @@ student[33] = 'sadkfjsdlk';
 console.log(Boolean(student[22]));
 console.log(student[22]);
 console.log(student[33]);
-console.log(student);
+console.log(student); */

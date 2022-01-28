@@ -3,20 +3,13 @@
 	<head>
 		<title>tool</title>
 		<meta charset="utf-8" />
+		<link rel="stylesheet" href="style.css" />
 		<style>
-			h1 {
-				text-align: center;
-				border: 3px pink dotted;
-			}
-			a {
-				text-decoration: none;
-			}
-			ol {
-				list-style-type: upper-roman;
-				font-size: 20px;
-			}
 			ul {
 				list-style-type: '\1F352';
+			}
+			ul li {
+				font-size: 20px;
 			}
 			#active {
 				color: red;
@@ -25,17 +18,48 @@
 		</style>
 	</head>
 	<body>
-		<h1><a href="https://en.wikipedia.org/wiki/Programmer">Developer</a></h1>
-		<ol>
-			<li><a href="developer.html">Developer</a></li>
-			<li><a href="language.html">Language</a></li>
-			<li><a id="active" href="tool.html">Tool</a></li>
-		</ol>
-		<ul>
-			<li><a href="developer.html">github</a></li>
-			<li><a href="language.html">vsc</a></li>
-			<li><a href="tool.html">sublime text</a></li>
-			<li><a href="tool.html">git fork</a></li>
-		</ul>
+		<h1><a href="index77.html">Programming</a></h1>
+		<div id="grid">
+			<ol>
+				<li><a href="developer.html">Developer</a></li>
+				<li><a href="language.html">Language</a></li>
+				<li><a id="active" href="tool.html">Tool</a></li>
+			</ol>
+			<div id="article">
+				<ul>
+					<li><a href="developer.html">github</a></li>
+					<p>
+						GitHub, Inc. is a provider of Internet hosting for software development and version control
+						using Git. It offers the distributed version control and source code management (SCM)
+						functionality of Git, plus its own features. It provides access control and several
+						collaboration features such as bug tracking, feature requests, task management, continuous
+						integration and wikis for every project.[4] Headquartered in California, it has been a
+						subsidiary of Microsoft since 2018.[5]
+					</p>
+					<li><a href="language.html">vsc</a></li>
+					<p>
+						Visual Studio Code is a source-code editor made by Microsoft for Windows, Linux and macOS.[9]
+						Features include support for debugging, syntax highlighting, intelligent code completion,
+						snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts,
+						preferences, and install extensions that add additional functionality.
+					</p>
+					<li><a href="tool.html">sublime text</a></li>
+					<p>
+						Sublime Text is a commercial source code editor. It natively supports many programming languages
+						and markup languages. Users can expand its functionality with plugins, typically community-built
+						and maintained under free-software licenses. To facilitate plugins, Sublime Text features a
+						Python API.
+					</p>
+					<li><a href="tool.html">git fork</a></li>
+					<p>
+						In software engineering, a project fork happens when developers take a copy of source code from
+						one software package and starts independent development on it, creating a distinct and separate
+						piece of software. The term often implies not merely a development branch, but also a split in
+						the developer community; as such, it is a form of schism.[1] Grounds for forking are varying
+						user preferences and stagnated or discontinued development of the original software.
+					</p>
+				</ul>
+			</div>
+		</div>
 	</body>
 </html>
