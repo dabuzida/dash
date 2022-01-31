@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>be</title>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            margin: 0;
+
+        }
+
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            border-bottom: 2px black solid;
+            padding: 10px;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 25px;
+            text-align: center;
+            /* border-bottom: 1px black solid; */
+            margin: 0;
+        }
+
+        #gate {
+            text-decoration: none;
+            color: darkblue
+        }
+
+        abbr {
+            font-size: 15px;
+            margin: 5px;
+            border-right: 1px black solid;
+            padding-right: 5px;
+        }
+
+        a {
+            text-decoration: none;
+            color: darkcyan;
+        }
+
+        #wall {
+            border-left: 1px solid rgb(165, 9, 204);
+            border-right: 1px solid rgb(165, 9, 204);
+        }
+
+        #active {
+            color: mediumvioletred;
+        }
+
+        ul {
+            list-style-type: '\1F3C3';
+        }
+
+        #background-image {
+            /* background-image: url(./be.jpg); */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+        }
+
+        @media (max-width: 700px) {
+            #grid {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>일상 루틴</h1> -->
+    <h1><a id="gate" href="index.html">운동 루틴</a></h1>
+    <abbr><a href="interval.html">Interval</a></abbr>
+    <abbr><a id="active" href="be.html">BE</a></a></abbr>
+    <abbr><a href="morning.html">아침 운동</a></a></abbr>
+    <div id="background-image">
+        <div id="grid" style="margin-top: 20px;">
+            <div>
+                <h2>할로우 組</h2>
+                <ul>
+                    <li>할로우 바디 곧은팔 플랭크 홀드</li>
+                    <li>곧은팔 리버스 플랭크 홀드</li>
+                    <li>할로우 바디 홀드</li>
+                    <li>아치 바디 홀든</li>
+                </ul>
+            </div>
+            <div id="wall">
+                <h2>행 組</h2>
+                <ul>
+                    <li>언더 그립 데드행</li>
+                    <li>저먼행</li>
+                    <li>인버티드 행</li>
+                </ul>
+            </div>
+            <div>
+                <h2>물구나무 組</h2>
+                <ul>
+                    <li>곧은팔 사이드 플랭크</li>
+                    <li>벽 물구나무</li>
+                    <li>평행봉 곧은팔 버티기(L-sit)</li>
+                </ul>
+            </div>
+        </div>
+        <div style="margin-top: 10px;">
+            <h2>일요일 추가루틴</h2>
+            <ul>
+                <li>턱걸이</li>
+                <li>네거티브 턱걸이</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
