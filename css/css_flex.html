@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Flex</title>
+		<meta charset="utf-8" />
+		<style>
+			body {
+				border: steelblue 3px solid;
+			}
+			.a {
+				width: 200px;
+				border: pink 3px solid;
+				display: inline-block;
+			}
+			p {
+				width: 200px;
+				border: turquoise 3px solid;
+				display: inline-block;
+				margin-bottom: 0;
+				vertical-align: top;
+			}
+			.container {
+				border: orange 3px solid;
+				display: flex;
+				height: 500px;
+				/* width: 300px; */
+				/* 	flex-direction 배치 방향 설정
+					flex-wrap 줄넘김 처리 설정
+					justify-content 메인축 방향 정렬 
+
+					align-items 수직축 방향 정렬 (단 행일때)
+					align-content 여러 행 정렬 (다중 행일때)
+				*/
+
+				flex-direction: row;
+				flex-wrap: wrap;
+
+				/* justify-content: flex-start; 
+				align-items: stretch; */
+				/* justify-content: center; 
+				align-items: center; */
+
+				justify-content: start;
+				align-items: stretch;
+				/* align-content: space-between; */
+			}
+			.item {
+				border: springgreen 3px solid;
+				/*	flex-basis 유연한 박스의 기본 크기 결정(default: auto)
+					flex-grow 늘리기 옵션. (dafault: 0, 늘리기 옵션 안씀)
+					flex-shrink 줄이기 옵션. (default: 1,  => content가 작으면 flex-basis보다 작아짐. 0이면 고정
+				*/
+				flex-basis: 200px;
+				/* flex-grow: 0.15; */
+				/* flex-shrink: 1; */
+				/* width: 300px; */
+				/* align-self: stretch; */
+			}
+			#x {
+				border: black 3px solid;
+				flex-basis: 100px;
+				align-self: flex-end;
+				z-index: 20;
+			}
+			/* .item:nth-child(1){
+				border: springgreen 3px solid;
+				flex-basis: 100px;
+			}
+			.item:nth-child(2){
+				border: springgreen 3px solid;
+				flex-basis: 100px;
+				flex-grow: 1;
+			} */
+		</style>
+	</head>
+	<body>
+		<div class="a">SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS</div>
+		<p>JJJJJJJJJJ</p>
+		<hr style="border: 3px black solid" />
+		<div class="container">
+			<div class="item">XXXXXXXXXX</div>
+			<div id="x" class="item">YYYYYYYYYY</div>
+			<div class="item">GGGGGGGGGG</div>
+			<!-- <div class="item">TTTTTTTTTT</div>
+			<div class="item">ZZZZZZZZZZ</div>
+			<div class="item">WWWWWWWWWW</div>
+			<div class="item">VVVVVVVVVV</div>
+			<div class="item">BBBBBBBBBB</div>
+			<div class="item">EEEEEEEEEE</div>
+			<div class="item">UUUUUUUUUU</div>
+			<div class="item">NNNNNNNNNN</div> -->
+		</div>
+	</body>
+</html>
