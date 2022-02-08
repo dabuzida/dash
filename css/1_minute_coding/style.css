@@ -32,7 +32,7 @@ body {
 	margin: 0;
 }
 .container {
-	border: red 1px solid;
+	/* border: red 1px solid; */
 	padding-top: 16px;
 	padding-bottom: 16px;
 	margin-top: 0;
@@ -53,6 +53,7 @@ body {
 	margin: 0 auto;
 }
 
+/* header */
 .header {
 	grid-area: h;
 	display: grid;
@@ -92,7 +93,7 @@ body {
 .nav {
 	position: relative;
 	/* border-top: 2px solid rgba(50, 50, 40, 0.5); */
-	border: 3px solid orange;
+	/* border: 3px solid orange; */
 	align-items: center;
 }
 .nav:before {
@@ -106,7 +107,7 @@ body {
 }
 .header-bottom {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	height: 50px;
 	letter-spacing: -0.05em;
 }
@@ -116,28 +117,103 @@ body {
 	justify-content: center;
 	height: 100%;
 }
+a {
+	text-decoration: none;
+}
 ul,
 li {
 	margin: 0;
 	padding: 0;
-	/* border: 0; */
 	list-style: none;
 	display: inline;
 }
-
-.main {
-	grid-area: m;
-	border: blue 3px solid;
-}
+/* aside-left */
 .aside-left {
 	grid-area: al;
-	border: springgreen 3px solid;
+	/* border: springgreen 3px solid; */
+	display: flex;
+	flex-direction: column;
+	padding-right: 1rem;
+	text-align: left;
+	border-right: 1px black solid;
+}
+.al-1 {
+	display: flex;
+	flex-direction: column;
+	font-size: 10px;
+	margin-bottom: 10px;
+}
+.al-1 div {
+	margin-bottom: 5px;
+}
+.al-2 {
+	border-width: 2px 0;
+	border-color: black;
+	border-style: solid;
+	font-size: 10px;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+.al-3 {
+	margin-bottom: 10px;
+}
+h4,
+p {
+	margin: 0;
+}
+p {
+	font-size: 10px;
 }
 
+/* main */
+.main {
+	grid-area: m;
+	padding: 0 32px;
+	text-align: left;
+}
+.main-top {
+	margin-bottom: 20px;
+}
+.main-mid {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+}
+.main-item {
+	/* border: 1px blue solid; */
+	/* width: 100px; */
+	padding: 0 16px;
+	margin-bottom: 16px;
+	/* display: flex;
+	flex-direction: column; */
+}
+figure {
+	margin: 0;
+}
+.img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.caption {
+	font-size: 5px;
+}
+.main-bot {
+	font-size: 1rem;
+	margin: 2rem 0;
+}
+/* aside-right */
 .aside-right {
 	grid-area: ar;
-	border: purple 3px solid;
+	padding-left: 1rem;
+	border-left: 1px black solid;
+	text-align: left;
 }
+.ar-1 {
+	margin: 0.5rem 0;
+	font-size: 0.8rem;
+}
+/* footer */
 .footer {
 	grid-area: f;
 	border: green 3px solid;
