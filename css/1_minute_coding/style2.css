@@ -37,6 +37,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
+	height: 100%;
 }
 .header-bot {
 	border-top: 2px solid rgba(50, 50, 40, 0.5);
@@ -54,7 +55,12 @@ body {
 	/* line-height: 1; */
 	height: 80%;
 	border: 1px black solid;
+	/* display: grid;
+	grid-template-rows: 1fr; */
 }
+/* * {
+	box-sizing: border-box;
+} */
 .header-top-item-2 {
 	flex-basis: 30%;
 	/* height: 110px; */
@@ -67,8 +73,12 @@ body {
 }
 /* ============================== */
 .header-left-img {
-	height: 6em;
-	width: 100%;
+	/* width: 100%; */
+	max-height: 100%;
+	max-width: 100%;
+	/* height: 100%; */
+	/* height: 6rem; */
+	/* border: 2px springgreen solid; */
 	/* object-fit: cover; */
 }
 .header-center-img {
@@ -207,9 +217,6 @@ figure {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-}
-.caption {
-	font-size: 5px;
 }
 .main-bot {
 	font-size: 1rem;

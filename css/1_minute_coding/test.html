@@ -1,43 +1,32 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" href="style3.css" />
+
 		<style>
-			/* p 요소 콘텐츠의 첫글자를 선택 */
-			p::first-letter {
-				/* font-size: 3em; */
+			/* img {
+				border: 3px solid green;
 			}
-			/* p 요소 콘텐츠의 첫줄을 선택 */
-			p::first-line {
-				color: green;
+			.original {
 			}
-
-			/* h1 요소 콘텐츠의 앞 공간에 content 어트리뷰트 값을 삽입한다 */
-			h1::before {
-				content: ' HTMLsdsdds!!! ';
-				color: blue;
+			.a {
+				width: 100;
+				height: 500;
 			}
-			/* h1 요소 콘텐츠의 뒷 공간에 content 어트리뷰트 값을 삽입한다 */
-			h1::after {
-				content: ' CsssSS3!!!';
-				color: red;
-			}
-
-			/* 드래그한 콘텐츠를 선택한다 */
-			p::selection {
-				color: red;
-				background: yellow;
-			}
-			:root {
-				font-size: 16px;
-			}
+			.b {
+				width: 300;
+				height: 100;
+			} */
 		</style>
 	</head>
 	<body>
-		<h1>Tsdfsdsdsdhis is a headinddfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgfgddg</h1>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo illum sunt distinctio sed, tempore,
-			repellat rerum et ea laborum voluptatum! Quisquam error fugiat debitis maiores officiis, tenetur ullam amet
-			in!
-		</p>
+		<!-- <img class="original" width="507" height="338" src="./aircraft.jpg" /> -->
+		<br />
+		<img class="a" src="./aircraft.jpg" />
+		<br />
+		<img class="a" width="700" height="100" src="./aircraft.jpg" />
+		<br />
+		<img class="b" width="500" height="500" src="./aircraft.jpg" />
+		<img class="c" width="50" height="50" src="./aircraft.jpg" />
 	</body>
 </html>
