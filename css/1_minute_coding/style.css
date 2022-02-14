@@ -1,6 +1,9 @@
 body {
 	margin: 0;
 }
+* {
+	box-sizing: border-box;
+}
 .container {
 	padding-top: 16px;
 	padding-bottom: 16px;
@@ -20,93 +23,80 @@ body {
 	margin: 0 auto;
 }
 
-/* header */
-/* ============================================ */
+/* ==================== header ==================== */
 .header {
 	grid-area: h;
 	display: grid;
 	grid-template-rows: 1fr 50px;
 	clear: both;
 	position: relative;
-	border-top: 2px solid red; /* rgba(50, 50, 40, 0.5); */
-	border-bottom: 2px solid blue; /* rgba(50, 50, 40, 0.5); */
+	border-top: 2px solid rgba(50, 50, 40, 0.5);
+	border-bottom: 2px solid rgba(50, 50, 40, 0.5);
 	text-align: center;
-}
-.header::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 3px;
-	width: 100%;
-	height: 2px;
-	background: rgb(50, 50, 40);
-}
-.header::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	bottom: 3px;
-	width: 100%;
-	height: 2px;
-	background: rgb(50, 50, 40);
-}
-.nav::before {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 5px;
-	width: 100%;
-	height: 1px;
-	background: springgreen; /* rgb(50, 50, 40); */
 }
 .header-top {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/* overflow: hidden; */
+	position: relative;
+	min-height: 100%;
+	/* 이게 적용되면 왜 원하는 대로 되는지 모르겠음 */
+}
+.header-bot {
+	border-top: 2px solid rgba(50, 50, 40, 0.5);
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+}
+/* ============================== */
+.header-top-item-1 {
+	flex-basis: 15%;
+	/* width: 10%; */
+	/* width: calc(17% - 1rem); */
+	/* line-height: 1; */
+	height: 80%;
+	/* min-width: 0; */
+	/* min-height: 0; */
+	/* display: grid;
+	grid-template-rows: 1fr; */
+}
+
+.header-top-item-2 {
+	flex-basis: 30%;
+	height: 80%;
+}
+.header-top-item-3 {
+	flex-basis: 15%;
+	height: 80%;
+}
+/* ============================== */
+.header-left-img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+
+	/* max-height: 100%; */
+	/* max-width: 100%; */
+
+	/* height: 6rem; */
+	/* border: 2px springgreen solid; */
 }
 .header-center-img {
-	height: 100%;
 	width: 100%;
-	object-fit: contain;
-}
-.header-left-img {
 	height: 100%;
-	width: 100%;
-	object-fit: contain;
+	object-fit: fill;
+	/* height: auto; */
+	/* height: 10px; */
+	/* width: 100%; */
+	/* object-fit: contain; */
 }
 .header-right-img {
 	height: 100%;
 	width: 100%;
-	object-fit: contain;
+	object-fit: fill;
 }
-
-.header-top-item-1 {
-	flex-basis: 10%;
-	/* width: calc(17% - 1rem); */
-	/* line-height: 1; */
-	/* height: 80px; */
-	border: 1px black solid;
-}
-.header-top-item-2 {
-	flex-basis: 30%;
-	height: 110px;
-	border: 1px black solid;
-}
-.header-top-item-3 {
-	flex-basis: 10%;
-	height: 80px;
-	/* border: 1px black solid; */
-}
-.nav {
-	position: relative;
-	border-top: 2px solid rgba(50, 50, 40, 0.5);
-	/* border: 3px solid orange; */
-	align-items: center;
-	font-size: 30px;
-}
-
-.header-bottom {
+/* ============================== */
+.header-bot-container {
 	display: flex;
 	justify-content: space-evenly;
 	height: 50px;
@@ -128,10 +118,36 @@ li {
 	list-style: none;
 	display: inline;
 }
+/* ============================== */
+.header-top::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 3px;
+	width: 100%;
+	height: 2px;
+	background: rgb(50, 50, 40);
+}
+.header-bot::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 3px;
+	width: 100%;
+	height: 2px;
+	background: rgb(50, 50, 40);
+}
+.header-bot::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 3px;
+	width: 100%;
+	height: 2px;
+	background: rgb(50, 50, 40);
+}
 
-/* ============================================ */
-
-/* aside-left */
+/* ==================== aside-left ==================== */
 .aside-left {
 	grid-area: al;
 	/* border: springgreen 3px solid; */
@@ -169,7 +185,7 @@ p {
 	font-size: 10px;
 }
 
-/* main */
+/* ==================== main ==================== */
 .main {
 	grid-area: m;
 	padding: 0 32px;
@@ -204,14 +220,12 @@ figure {
 	height: 100%;
 	object-fit: cover;
 }
-.caption {
-	font-size: 5px;
-}
 .main-bot {
 	font-size: 1rem;
 	margin: 2rem 0;
 }
-/* aside-right */
+
+/* ==================== aside-right ==================== */
 .aside-right {
 	grid-area: ar;
 	padding-left: 1rem;
@@ -222,7 +236,8 @@ figure {
 	margin: 0.5rem 0;
 	font-size: 0.8rem;
 }
-/* footer */
+
+/* ==================== footer ==================== */
 .footer {
 	grid-area: f;
 	border-top: 1px black solid;
@@ -230,4 +245,60 @@ figure {
 	padding: 1rem 0;
 	justify-content: center;
 	font-size: 20px;
+}
+
+@media (max-width: 1023px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		padding-top: 41px;
+	}
+	.header {
+		grid-template-rows: 8rem 50px;
+		/* padding-bottom: 10px;
+		box-sizing: content-box; */
+	}
+	.aside-left {
+		display: none;
+	}
+	.main {
+		padding: 32px 0 50px 0;
+		/* padding: 0;
+		margin-bottom: 50px; */
+		/* height: 45rem; */
+	}
+	.main-mid {
+		display: flex;
+		flex-flow: wrap;
+		justify-content: space-evenly;
+	}
+	.main-item {
+		padding: 0 1px;
+		margin-bottom: 0;
+		flex-basis: 30%;
+	}
+	.aside-right {
+		padding: 0;
+		border: 0;
+		text-align: left;
+	}
+	.aside-right img {
+		width: 400px;
+		height: auto;
+	}
+	.footer {
+		margin-top: 32px;
+	}
+}
+@media (max-width: 767px) {
+	.header {
+		grid-template-rows: 70px 50px;
+	}
+	.header-top-item-1 {
+		visibility: hidden;
+	}
+	.header-top-item-3 {
+		flex-basis: 5%;
+		height: 40%;
+	}
 }
