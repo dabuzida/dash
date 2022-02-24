@@ -36,10 +36,9 @@ console.log(z); */
 // let x = [1,2,3];
 // x = x.concat([2,2,2,2,]);
 // console.log(x);
-var x = 15;
+// var x = 15;
 
-console.log(typeof x.toString(2));
-
+// console.log(typeof x.toString(2));
 
 /* const arr = [1, 2, 3, 4, 5];
 const arr2 = [0, 2, 4, 6, 8];
@@ -79,7 +78,34 @@ for (const val of xx) {
     }
 } */
 
-let xx = 'asss';
-for (const val of xx) {
-    console.log(val);
+// let xx = 'asss';
+// for (const val of xx) {
+//     console.log(val);
+// }
+
+/* var x = 10;
+
+function foo() {
+	x = 100;
+	console.log(x);
 }
+console.log(x); // ?
+foo();
+console.log(x); // ? */
+
+var x = 10;
+function foo() {
+	x = 100;
+	console.log(x);
+
+	function bar() {
+		// 내부함수
+		x = 1000;
+		console.log(x); // ?
+	}
+
+	bar();
+}
+console.log(x); // ?
+foo();
+console.log(x); // ?
