@@ -33,21 +33,15 @@ console.log(keys); */
 // let { Joh, Pete, Mary } = salaries;
 // console.log(Joh);
 
-var x = 1;
-function a() {
-	var x = 2;
-	console.log(x);
-	function y() {
-		console.log('y함수', x);
-		x = 100;
-		console.log(x);
-	}
-	y();
-}
-console.log(x);
-a();
+let date = new Date();
+console.log('현재시간', date);
+console.log('현재요일', date.getDay());
+console.log('1970-1-1 0h 0m 0s로부터 지난 시간[ms]', date.getTime());
+console.log(date.getHours());
 
-{
-	x = 33;
-}
-console.log(x);
+let today = new Date();
+console.log(today);
+today.setHours(0);
+console.log(today);
+today.setHours(0, 0, 0);
+console.log(today);
