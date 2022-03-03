@@ -93,7 +93,7 @@ console.log(x); // ?
 foo();
 console.log(x); // ? */
 
-var x = 10;
+/* var x = 10;
 function foo() {
 	x = 100;
 	console.log(x);
@@ -108,4 +108,12 @@ function foo() {
 }
 console.log(x); // ?
 foo();
-console.log(x); // ?
+console.log(x); // ? */
+const a = `${{ a: 1 }}`;
+console.log(a);
+
+const b = { a: 1 };
+console.log(b);
+
+const text = `${b}`;
+console.log(text);
