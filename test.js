@@ -33,7 +33,7 @@ console.log(keys); */
 // let { Joh, Pete, Mary } = salaries;
 // console.log(Joh);
 
-let date = new Date();
+/* let date = new Date();
 console.log('현재시간', date);
 console.log('현재요일', date.getDay());
 console.log('1970-1-1 0h 0m 0s로부터 지난 시간[ms]', date.getTime());
@@ -44,4 +44,48 @@ console.log(today);
 today.setHours(0);
 console.log(today);
 today.setHours(0, 0, 0);
-console.log(today);
+console.log(today); */
+
+/* let student = {
+	name: 'John',
+	age: 30,
+	isAdmin: false,
+	courses: ['html', 'css', 'js'],
+	wife: null,
+	good: function () {
+		console.log('good');
+	},
+	bye() {
+		console.log('bye');
+	},
+};
+student.good();
+student.bye();
+
+let json = JSON.stringify(student);
+
+console.log(typeof json); // 문자열이네요!
+
+console.log(json);
+console.log(JSON.stringify([1, 2, 'sdfds', undefined, null, 3]));
+console.log(JSON.stringify({ a: [1, 2, 3] })); */
+
+let room = {
+	number: 23,
+};
+
+let meetup = {
+	title: 'Conference',
+	participants: ['john', 'ann'],
+};
+
+meetup.place = room; // meetup은 room을 참조합니다.
+room.occupiedBy = meetup; // room은 meetup을 참조합니다.
+// let x = JSON.stringify(room); // Error: Converting circular structure to JSON
+// let y = JSON.stringify(meetup); // Error: Converting circular structure to JSON
+console.log(room);
+console.log(room.occupiedBy.place);
+console.log(meetup);
+
+// console.log(x);
+// console.log(y);
