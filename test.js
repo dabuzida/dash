@@ -70,23 +70,42 @@ console.log(json);
 console.log(JSON.stringify([1, 2, 'sdfds', undefined, null, 3]));
 console.log(JSON.stringify({ a: [1, 2, 3] })); */
 
-let room = {
+/* let room = {
 	number: 23,
 };
 
 let meetup = {
 	title: 'Conference',
-	participants: ['john', 'ann'],
+	occupiedBy: [{ name: 'John' }, { name: 'Alice' }],
+	place: room,
 };
 
-meetup.place = room; // meetup은 room을 참조합니다.
-room.occupiedBy = meetup; // room은 meetup을 참조합니다.
-// let x = JSON.stringify(room); // Error: Converting circular structure to JSON
-// let y = JSON.stringify(meetup); // Error: Converting circular structure to JSON
-console.log(room);
-console.log(room.occupiedBy.place);
-console.log(meetup);
+// 순환 참조
+room.occupiedBy = meetup;
+meetup.self = meetup;
 
+// console.log(room);
+// console.log(meetup);
 
-// console.log(x);
-// console.log(y);
+console.log(
+	JSON.stringify(meetup, function replacer(key, value) {
+		// return value == meetup ? undefined : value;
+		return key != '' && value == meetup ? undefined : value;
+	}),
+); */
+
+let list = {
+	value: 1,
+	next: {
+		value: 2,
+		next: {
+			value: 3,
+			next: {
+				value: 4,
+				next: null,
+			},
+		},
+	},
+};
+
+function printList(list) {}
