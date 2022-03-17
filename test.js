@@ -108,4 +108,37 @@ let list = {
 	},
 };
 
-function printList(list) {}
+function printList(list) {
+	let i = [];
+	while (list) {
+		// console.log(list.value);
+		i.push(list.value);
+		list = list.next;
+	}
+	for (let j = i.length - 1; j >= 0; j--) {
+		console.log(i[j]);
+	}
+}
+
+function printList2(list) {
+	// i.push(list.value);
+	// console.log(list.value);
+	// if (list.next) {
+	// 	return printList2(list.next);
+	// }
+}
+printList(list);
+// console.log(list);
+// printList2(list);
+
+// console.log(list.next ? 100 : 0);
+// console.log(Object.keys(list));
+// console.log(Object.values(list));
+// console.log(Object.entries(list));
+
+/* 
+ Array.isArray()  인자가 배열인지 판별해서 true false
+ Object.keys	인자로 받은 객체의 키를 모아 배열로 반환
+ Object.values 	인자로 받은 객체의 값만을 모아 배열로 반환
+ Object.entries 	인자로 받은 객체의 [키, 값]쌍을 담은 배열 반환
+*/
