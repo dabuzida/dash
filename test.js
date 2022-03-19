@@ -121,16 +121,13 @@ function printList(list) {
 }
 
 function printList2(list) {
-	// i.push(list.value);
-	// console.log(list.value);
-	// if (list.next) {
-	// 	return printList2(list.next);
-	// }
+	if (list.next) {
+		printList2(list.next);
+	}
+	return printList2(list.value);
 }
-printList(list);
-// console.log(list);
+// printList(list);
 // printList2(list);
-
 // console.log(list.next ? 100 : 0);
 // console.log(Object.keys(list));
 // console.log(Object.values(list));
@@ -142,3 +139,28 @@ printList(list);
  Object.values 	인자로 받은 객체의 값만을 모아 배열로 반환
  Object.entries 	인자로 받은 객체의 [키, 값]쌍을 담은 배열 반환
 */
+
+/* function showName() {
+	console.log(arguments.length);
+	console.log(arguments);
+	console.log(arguments[0]);
+	console.log(arguments[1]);
+
+	// arguments는 이터러블 객체이기 때문에
+	// for(let arg of arguments) alert(arg); 를 사용해 인수를 펼칠 수 있습니다.
+}
+
+// 2, Bora, Lee가 출력됨
+showName('Bora', 'Lee');
+
+// 1, Bora, undefined가 출력됨(두 번째 인수는 없음)
+showName('Bora'); */
+
+let x;
+let y = null;
+console.log(typeof x, x);
+console.log(typeof y, y);
+
+undefined = 'value';
+console.log(undefined);
+console.log(1 + undefined);
