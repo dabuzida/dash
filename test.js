@@ -156,11 +156,28 @@ showName('Bora', 'Lee');
 // 1, Bora, undefined가 출력됨(두 번째 인수는 없음)
 showName('Bora'); */
 
-let x;
+/* let x;
 let y = null;
 console.log(typeof x, x);
 console.log(typeof y, y);
 
 undefined = 'value';
-console.log(undefined);
-console.log(1 + undefined);
+console.log(undefined); */
+
+let x = {
+	name: 'James',
+	age: 33,
+};
+let i = Object.assign({}, x);
+let j = {};
+Object.assign(j, i);
+let y = Object.assign(x);
+let z = { ...x };
+i.birth = '1991';
+y.school = 'yang-jeong';
+z.school = 'mit';
+console.log(i);
+console.log(j);
+console.log(x);
+console.log(y);
+console.log(z);
