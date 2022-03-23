@@ -107,8 +107,22 @@ let list = {
 		},
 	},
 };
+function printList2(list) {
+	/* if (!list.next) {
+		return console.log(list.value);
+	}
+	printList2(list.next);
+	return console.log(list.value); */
 
-function printList(list) {
+	if (list.next) {
+		printList2(list.next);
+	}
+
+	console.log(list.value);
+}
+printList2(list);
+
+/* function printList(list) {
 	let i = [];
 	while (list) {
 		// console.log(list.value);
@@ -118,16 +132,9 @@ function printList(list) {
 	for (let j = i.length - 1; j >= 0; j--) {
 		console.log(i[j]);
 	}
-}
-
-function printList2(list) {
-	if (list.next) {
-		printList2(list.next);
-	}
-	return printList2(list.value);
-}
+} */
 // printList(list);
-// printList2(list);
+
 // console.log(list.next ? 100 : 0);
 // console.log(Object.keys(list));
 // console.log(Object.values(list));
@@ -164,7 +171,7 @@ console.log(typeof y, y);
 undefined = 'value';
 console.log(undefined); */
 
-let x = {
+/* let x = {
 	name: 'James',
 	age: 33,
 };
@@ -180,4 +187,4 @@ console.log(i);
 console.log(j);
 console.log(x);
 console.log(y);
-console.log(z);
+console.log(z); */
