@@ -94,7 +94,7 @@ console.log(
 	}),
 ); */
 
-let list = {
+/* let list = {
 	value: 1,
 	next: {
 		value: 2,
@@ -108,11 +108,11 @@ let list = {
 	},
 };
 function printList2(list) {
-	/* if (!list.next) {
-		return console.log(list.value);
-	}
-	printList2(list.next);
-	return console.log(list.value); */
+	// if (!list.next) {
+	// 	return console.log(list.value);
+	// }
+	// printList2(list.next);
+	// return console.log(list.value);
 
 	if (list.next) {
 		printList2(list.next);
@@ -120,7 +120,7 @@ function printList2(list) {
 
 	console.log(list.value);
 }
-printList2(list);
+printList2(list); */
 
 /* function printList(list) {
 	let i = [];
@@ -188,3 +188,59 @@ console.log(j);
 console.log(x);
 console.log(y);
 console.log(z); */
+
+function makeCounter() {
+	let count = 0;
+
+	return function () {
+		return ++count;
+	};
+}
+
+let counter = makeCounter();
+
+console.log(counter()); // 0
+console.log(counter()); // 1
+console.log(counter()); // 2
+// console.log(makeCounter()()); // 0
+// console.log(makeCounter()()); // 1
+// console.log(makeCounter()()); // 2
+// console.log(typeof makeCounter());
+// console.log(typeof 1);
+
+// function returnTen() {
+// 	// return 10;
+
+// 	return function asdf(n) {
+// 		return function name(params) {
+// 			return 50;
+// 		};
+// 	};
+// }
+
+// let a = returnTen;
+// let b = a();
+
+// console.log(returnTen()(10)());
+// return;
+
+// console.log(a, typeof a);
+// console.log(typeof a());
+// console.log(b, typeof b);
+
+/* function curry(f) {
+	return f;
+}
+
+function temp(n) {
+	return function temp2(l) {
+		return n + l;
+	};
+}
+
+let a = curry(temp)(5)(6);
+console.log('a: ', a, typeof a);
+
+let b = curry(temp);
+console.log('b: ', b(5), typeof b);
+ */
