@@ -269,3 +269,10 @@ function xx() {
 xx();
 let aa = 1;
 console.log(aa);
+
+setTimeout(() => {
+	console.log('hi');
+}, 3000);
+
+aa = null;
+console.log(aa);
