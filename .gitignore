@@ -28,5 +28,5 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-# extension-coderunner
+# Extension-CodeRunner
 tempCodeRunnerFile.*

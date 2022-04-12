@@ -13,7 +13,6 @@ void main() {
   //   await print(info2);
   // });
 
-  
   // Future<int> y = Future<int>.delayed(Duration(seconds: 1), () {
   //   return 100;
   // });
@@ -21,6 +20,11 @@ void main() {
   // print('-0-');
   // sleep(Duration(seconds: 4));
   // print(y);
+
+  final DateTime x = DateTime(2022, 3, 11);
+  final DateTime y = DateTime.now();
+  print(x);
+  print(y);
 }
 
 Future<int> aa() {
