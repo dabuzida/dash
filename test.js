@@ -245,7 +245,7 @@ let b = curry(temp);
 console.log('b: ', b(5), typeof b);
  */
 
-function sayHi() {
+/* function sayHi() {
 	console.log(phrase); // undefined
 
 	phrase = 'Hello'; // 할당은 실행 흐름이 해당 코드에 도달했을 때 처리됩니다.
@@ -269,10 +269,34 @@ function xx() {
 xx();
 let aa = 1;
 console.log(aa);
+ */
 
-setTimeout(() => {
-	console.log('hi');
-}, 3000);
+let x = 1011;
+let y = 1010;
+let z = x & y;
+let p = 0b11;
 
-aa = null;
-console.log(aa);
+console.log(z, typeof z);
+console.log(typeof p);
+
+const orders = ['ABCFG', 'AC', 'CDE', 'ACDE', 'BCFG', 'ACDEH'];
+const course = [2, 3, 4];
+// result = ['AC', 'ACDE', 'BCFG', 'CDE'];
+
+const givenAllLetters = orders.reduce((prevVal, currVal) => {
+	currVal.split('').map(e => {
+		prevVal.includes(e)? : prevVal.push(e)
+// 주어진 문자열 배열 순회하면서 중복없이 주어진 문자를 합친 문자열 만들기	
+	});
+
+})
+
+
+
+const letterLength = orders.map(e => e.length);
+
+const maxLengthLetter = ;
+const maxLength = Math.max(...letterLength);
+
+console.log(maxLength);
+const existingLetters =  // 'ACIXZ'

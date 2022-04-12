@@ -1,2 +1,3 @@
-let a = curry(temp);
-console.log(a(5));
+
+// b.split('').push('i');
+// console.log(b);

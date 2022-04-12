@@ -109,7 +109,7 @@ function foo() {
 console.log(x); // ?
 foo();
 console.log(x); // ? */
-const a = `${{ a: 1 }}`;
+/* const a = `${{ a: 1 }}`;
 console.log(a);
 
 const b = { a: 1 };
@@ -117,3 +117,19 @@ console.log(b);
 
 const text = `${b}`;
 console.log(text);
+ */
+
+let a = 'coffee';
+let b = 'coke';
+// let c = a.split('');
+// let d = new Set(...c);
+// let e = new Set(a);
+// console.log(c);
+// console.log(d);
+// console.log(e);
+let p = b.split('');
+p.push('i');
+// b.split('').push('i');
+// console.log(b);
+console.log(b);
+console.log(p);
