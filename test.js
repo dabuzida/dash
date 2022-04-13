@@ -271,28 +271,39 @@ let aa = 1;
 console.log(aa);
  */
 
-let x = 1011;
+/* let x = 1011;
 let y = 1010;
 let z = x & y;
 let p = 0b11;
 
 console.log(z, typeof z);
 console.log(typeof p);
-
+ */
 const orders = ['ABCFG', 'AC', 'CDE', 'ACDE', 'BCFG', 'ACDEH'];
 const course = [2, 3, 4];
 // result = ['AC', 'ACDE', 'BCFG', 'CDE'];
 
-const givenAllLetters = orders.reduce((prevVal, currVal) => {
-	currVal.split('').map(e => {
-		prevVal.includes(e)? : prevVal.push(e)
-// 주어진 문자열 배열 순회하면서 중복없이 주어진 문자를 합친 문자열 만들기	
-	});
+// 주어진 문자열 배열 순회하면서 중복없이 주어진 문자를 합친 문자열 만들기
+const givenAllLetters = orders.reduce((acc, cur) =>
+	acc.concat(
+		'',
+		cur
+			.split('')
+			.filter(e => !acc.includes(e))
+			.join(''),
+	),
+);
+// 주어진 문자열 배열 순회하면서 중복없이 주어진 문자를 합친 문자열 만들기2
+// const givenAllLetters2 = new Set(orders.join(''));
+// console.log(givenAllLetters2);
+console.log(givenAllLetters);
+const standardString = givenAllLetters.split('').sort().join(''); // 사전순 정렬
+console.log(standardString);
 
-})
+const binaryMapping = +'1'.repeat(standardString.length);
+console.log(binaryMapping);
 
-
-
+/* 
 const letterLength = orders.map(e => e.length);
 
 const maxLengthLetter = ;
@@ -300,3 +311,5 @@ const maxLength = Math.max(...letterLength);
 
 console.log(maxLength);
 const existingLetters =  // 'ACIXZ'
+
+ */

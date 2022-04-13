@@ -127,9 +127,18 @@ let b = 'coke';
 // console.log(c);
 // console.log(d);
 // console.log(e);
-let p = b.split('');
-p.push('i');
+// let p = b.split('');
+// p.push('i');
 // b.split('').push('i');
 // console.log(b);
 console.log(b);
-console.log(p);
+// console.log(p);
+
+let p = ['ABCFG', 'AC', 'CDE', 'ACDE', 'BCFG', 'ACDEH'];
+let q = p.reduce((acc, cur) => acc.concat('', cur));
+let r = p.join('');
+console.log(q);
+console.log(r);
+
+let s = 'aa'.concat('', [1, 2, 3], [4, 6, 8]);
+console.log(s);
