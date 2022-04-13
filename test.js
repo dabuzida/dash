@@ -303,6 +303,11 @@ console.log(standardString);
 const binaryMapping = +'1'.repeat(standardString.length);
 console.log(binaryMapping);
 
+let mappedOrders = [];
+mappedOrders = orders.map(e => {
+	e.split('').map(i => standardString.indexOf());
+});
+
 /* 
 const letterLength = orders.map(e => e.length);
 

@@ -142,3 +142,7 @@ console.log(r);
 
 let s = 'aa'.concat('', [1, 2, 3], [4, 6, 8]);
 console.log(s);
+
+let i = 'abcde';
+let j = 'bcjd';
+console.log(i.includes(j));
