@@ -301,12 +301,35 @@ const standardString = givenAllLetters.split('').sort().join(''); // 사전순 �
 console.log(standardString);
 
 const binaryMapping = +'1'.repeat(standardString.length);
+const _sample = '0'.repeat(standardString.length).split('');
+// const _sample = ['1', ...'0'.repeat(standardString.length).split('')];
 console.log(binaryMapping);
 
-let mappedOrders = [];
-mappedOrders = orders.map(e => {
-	e.split('').map(i => standardString.indexOf());
+let mappedOrders = orders.map(e => {
+	let sample = _sample.slice();
+	let j = e.split('');
+	let container = [];
+	for (let val of j) {
+		let id = standardString.indexOf(val);
+		if (id !== -1) {
+			sample.splice(id, 1, 1);
+			// sample.splice(id + 1, 1, 1);
+		}
+	}
+	return +sample.join('');
 });
+console.log(orders);
+console.log(mappedOrders);
+
+let willBeRenamed = mappedOrders.map(e => e & binaryMapping);
+console.log(willBeRenamed);
+
+// 2진수 비트연산 후 1의 개수 어떻게 뽑지?
+
+// let mappedOrders = [];
+// mappedOrders = orders.map(e => {
+// 	e.split('').map(i => standardString.indexOf());
+// });
 
 /* 
 const letterLength = orders.map(e => e.length);

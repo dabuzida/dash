@@ -146,3 +146,22 @@ console.log(s);
 let i = 'abcde';
 let j = 'bcjd';
 console.log(i.includes(j));
+
+const x = '00000'.split('');
+let w = x.slice();
+console.log(w, typeof w);
+
+let ax = 'xie'.split('');
+console.log(ax);
+console.log(ax.indexOf('x'));
+ax.splice(0, 1, 's');
+console.log(ax);
+
+let ai = 'blind'.split('');
+console.log(ai);
+console.log(typeof ai.join(''));
+
+console.log(0b100101 & 0b111011100);
+let au = 5;
+console.log(typeof au);
+console.log(typeof au.toString(2));
