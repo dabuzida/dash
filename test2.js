@@ -165,3 +165,37 @@ console.log(0b100101 & 0b111011100);
 let au = 5;
 console.log(typeof au);
 console.log(typeof au.toString(2));
+console.log(5 & 4);
+console.log((987).toString(16));
+let az = '101011';
+console.log(az[2]);
+console.log(9 >>> 3);
+
+let ap = Array(6);
+ap.fill(1, 0, 6);
+let ay = Array(5);
+ay.fill(0, 0, 5);
+ay.push(1);
+console.log(ap);
+console.log(ay);
+let at = ay.join('');
+console.log(at);
+console.log('======================================');
+const $sample = Array(8).fill(7, 0, 8);
+let sample = $sample.slice();
+console.log($sample);
+console.log(sample);
+
+let ar = [
+	[1, 1, 1, 0, 0, 1, 1, 0],
+	[1, 0, 1, 0, 0, 0, 0, 0],
+];
+
+console.log(ar[0][3]);
+
+let aw = '';
+let aq = '1011';
+console.log(Boolean(+'0'));
+
+let al = aw.concat('', aq[1]);
+console.log('al:', al);

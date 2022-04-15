@@ -282,9 +282,12 @@ console.log(typeof p);
 const orders = ['ABCFG', 'AC', 'CDE', 'ACDE', 'BCFG', 'ACDEH'];
 const course = [2, 3, 4];
 // result = ['AC', 'ACDE', 'BCFG', 'CDE'];
+// const orders = ['ABCDE', 'AB', 'CD', 'ADE', 'XYZ', 'XYZ', 'ACD'];
+// const course = [2, 3, 5];
+// result = ["ACD", "AD", "ADE", "CD", "XYZ"];
 
 // 주어진 문자열 배열 순회하면서 중복없이 주어진 문자를 합친 문자열 만들기
-const givenAllLetters = orders.reduce((acc, cur) =>
+const lettersAppeared = orders.reduce((acc, cur) =>
 	acc.concat(
 		'',
 		cur
@@ -296,39 +299,87 @@ const givenAllLetters = orders.reduce((acc, cur) =>
 // 주어진 문자열 배열 순회하면서 중복없이 주어진 문자를 합친 문자열 만들기2
 // const givenAllLetters2 = new Set(orders.join(''));
 // console.log(givenAllLetters2);
-console.log(givenAllLetters);
-const standardString = givenAllLetters.split('').sort().join(''); // 사전순 정렬
-console.log(standardString);
+console.log('lettersAppeared', lettersAppeared); // ABCFGDEH
+const lettersSorted = lettersAppeared.split('').sort().join(''); // 사전순 정렬
+const _length = lettersSorted.length;
+console.log('lettersSorted', lettersSorted); // ABCDEFGH
 
-const binaryMapping = +'1'.repeat(standardString.length);
-const _sample = '0'.repeat(standardString.length).split('');
-// const _sample = ['1', ...'0'.repeat(standardString.length).split('')];
-console.log(binaryMapping);
+// const binaryMapping = +'1'.repeat(_length);
+const _sample = '0'.repeat(_length).split('');
+const $sample = Array(_length).fill(0, 0, _length);
+// console.log(binaryMapping);
 
 let mappedOrders = orders.map(e => {
-	let sample = _sample.slice();
+	/* let sample = _sample.slice();
 	let j = e.split('');
-	let container = [];
 	for (let val of j) {
-		let id = standardString.indexOf(val);
+		let id = lettersSorted.indexOf(val);
 		if (id !== -1) {
-			sample.splice(id, 1, 1);
-			// sample.splice(id + 1, 1, 1);
+			sample.splice(id, 1, '1');
 		}
 	}
-	return +sample.join('');
+	return sample; */
+	let sample = $sample.slice();
+	let j = e.split('');
+	for (let val of j) {
+		let id = lettersSorted.indexOf(val);
+		if (id !== -1) {
+			sample.splice(id, 1, 1);
+		}
+	}
+	return sample;
 });
-console.log(orders);
-console.log(mappedOrders);
+console.log('orders', orders);
+console.log('mappedOrders', mappedOrders);
+let ans = [];
+let temp = [];
+for (let i = 0; i < mappedOrders.length - 1; i++) {
+	for (let j = i + 1; j < mappedOrders.length; j++) {
+		// console.log('temp: ', temp);
+		// let temp = [];
+		for (let k = 0; k < _length; k++) {
+			temp[k] = mappedOrders[i][k] * mappedOrders[j][k];
+		}
+		// console.log(temp)
+		let _temp = temp.filter(e => e === 1);
+		let $temp = temp.join('');
+		if (course.includes(_temp.length) && !ans.includes($temp)) {
+			ans.push($temp);
+		}
+	}
+}
 
-let willBeRenamed = mappedOrders.map(e => e & binaryMapping);
-console.log(willBeRenamed);
+console.log('======================================');
+
+console.log(lettersSorted); // 1, 0으로 맵핑후 앞원소부터, 그원소의 바로 뒤부터 끝까지 모든 원소를 비트연산한 결과 >> 1의 합이  course를 만족하는 메뉴를 출력
+console.log('ans:', ans);
+
+let answer = [];
+console.log(lettersSorted[3]);
+ans.forEach(e => {
+	let str = '';
+
+	for (let i = 0; i < _length; i++) {
+		if (+e[i]) {
+			str = str.concat(lettersSorted[i]);
+		}
+	}
+	answer.push(str);
+	// console.log('str:', str);
+	// console.log('answer:', answer);
+});
+console.log(answer);
+
+answer.sort();
+console.log(answer);
+
+// let willBeRenamed = mappedOrders.map(e => e & binaryMapping);
+// console.log(willBeRenamed);
 
 // 2진수 비트연산 후 1의 개수 어떻게 뽑지?
-
 // let mappedOrders = [];
 // mappedOrders = orders.map(e => {
-// 	e.split('').map(i => standardString.indexOf());
+// 	e.split('').map(i => lettersSorted.indexOf());
 // });
 
 /* 
