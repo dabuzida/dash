@@ -57,16 +57,18 @@ let _course = [];
 for (let i = 0; i < course.length; i++) {
 	let _obj = {};
 	for (let j = 0; j < orders.length; j++) {
-		let count = course[j];
+		let count = course[i];
+		let str = orders[j];
 
-		let subStr = '';
-		subStr.concat();
-	}
-}
+		let subStr = str[0];
+		let rest = str.slice(1, str.length);
 
-for (let e of orders) {
-	for (let count of course) {
-		if (e.length >= count) {
+		for (let e of rest) {
+			subStr.concat(e);
 		}
 	}
+
+	// _obj를 _course에 삽입
 }
+
+// _course 사전순 정렬 후 리턴
