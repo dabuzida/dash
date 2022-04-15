@@ -40,21 +40,33 @@ console.log(user === clone); // true, 같은 객체입니다. */
 const dartResult = '10S2D*3T'; //  37
 
 let y = dartResult.replace(/[^0-9]/g, " ");
+*/
 
+// const orders = ['ABCFG', 'AC', 'CDE', 'ACDE', 'BCFG', 'ACDEH'];
+// const course = [2, 3, 4];
+// result = ['AC', 'ACDE', 'BCFG', 'CDE'];
+const orders = ['ABCDE', 'AB', 'CD', 'ADE', 'XYZ', 'XYZ', 'ACD'];
+const course = [2, 3, 5];
+// result = ["ACD", "AD", "ADE", "CD", "XYZ"];
+// const orders = ['XYZ', 'XWY', 'WXA'];
+// const course = [2, 3, 4];
+// result = ["WX", "XY"];
 
-let arr = y.split(" ");
-console.log(arr)
+let _course = [];
 
-let ni = arr.filter(e => e.length > 0);
-console.log(ni);
+for (let i = 0; i < course.length; i++) {
+	let _obj = {};
+	for (let j = 0; j < orders.length; j++) {
+		let count = course[j];
 
+		let subStr = '';
+		subStr.concat();
+	}
+}
 
-console.log(y);
-console.log(arr); */
-
-// console.log(parseInt(y));
-// console.log(z);
-
-let a = [1, 2, 3, 4, 5];
-let x = a.splice(2, 1);
-console.log(a);
+for (let e of orders) {
+	for (let count of course) {
+		if (e.length >= count) {
+		}
+	}
+}

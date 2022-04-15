@@ -279,15 +279,17 @@ let p = 0b11;
 console.log(z, typeof z);
 console.log(typeof p);
  */
-const orders = ['ABCFG', 'AC', 'CDE', 'ACDE', 'BCFG', 'ACDEH'];
-const course = [2, 3, 4];
+// const orders = ['ABCFG', 'AC', 'CDE', 'ACDE', 'BCFG', 'ACDEH'];
+// const course = [2, 3, 4];
 // result = ['AC', 'ACDE', 'BCFG', 'CDE'];
-// const orders = ['ABCDE', 'AB', 'CD', 'ADE', 'XYZ', 'XYZ', 'ACD'];
-// const course = [2, 3, 5];
+const orders = ['ABCDE', 'AB', 'CD', 'ADE', 'XYZ', 'XYZ', 'ACD'];
+const course = [2, 3, 5];
 // result = ["ACD", "AD", "ADE", "CD", "XYZ"];
-
+// const orders = ['XYZ', 'XWY', 'WXA'];
+// const course = [2, 3, 4];
+// result = ["WX", "XY"];
 // 주어진 문자열 배열 순회하면서 중복없이 주어진 문자를 합친 문자열 만들기
-const lettersAppeared = orders.reduce((acc, cur) =>
+/* const lettersAppeared = orders.reduce((acc, cur) =>
 	acc.concat(
 		'',
 		cur
@@ -295,21 +297,18 @@ const lettersAppeared = orders.reduce((acc, cur) =>
 			.filter(e => !acc.includes(e))
 			.join(''),
 	),
-);
+); */
 // 주어진 문자열 배열 순회하면서 중복없이 주어진 문자를 합친 문자열 만들기2
-// const givenAllLetters2 = new Set(orders.join(''));
-// console.log(givenAllLetters2);
+const lettersAppeared = [...new Set(orders.join(''))].join('');
 console.log('lettersAppeared', lettersAppeared); // ABCFGDEH
+
 const lettersSorted = lettersAppeared.split('').sort().join(''); // 사전순 정렬
-const _length = lettersSorted.length;
 console.log('lettersSorted', lettersSorted); // ABCDEFGH
 
-// const binaryMapping = +'1'.repeat(_length);
-const _sample = '0'.repeat(_length).split('');
-const $sample = Array(_length).fill(0, 0, _length);
-// console.log(binaryMapping);
+const _length = lettersSorted.length;
+const _sample = Array(_length).fill(0, 0, _length);
 
-let mappedOrders = orders.map(e => {
+let lettersMapped = orders.map(e => {
 	/* let sample = _sample.slice();
 	let j = e.split('');
 	for (let val of j) {
@@ -319,7 +318,7 @@ let mappedOrders = orders.map(e => {
 		}
 	}
 	return sample; */
-	let sample = $sample.slice();
+	let sample = _sample.slice();
 	let j = e.split('');
 	for (let val of j) {
 		let id = lettersSorted.indexOf(val);
@@ -330,65 +329,77 @@ let mappedOrders = orders.map(e => {
 	return sample;
 });
 console.log('orders', orders);
-console.log('mappedOrders', mappedOrders);
+console.log('lettersMapped', lettersMapped);
 let ans = [];
 let temp = [];
-for (let i = 0; i < mappedOrders.length - 1; i++) {
-	for (let j = i + 1; j < mappedOrders.length; j++) {
+let counter = {};
+
+for (let i = 0; i < lettersMapped.length - 1; i++) {
+	// let counter = {};
+	for (let j = i + 1; j < lettersMapped.length; j++) {
 		// console.log('temp: ', temp);
 		// let temp = [];
 		for (let k = 0; k < _length; k++) {
-			temp[k] = mappedOrders[i][k] * mappedOrders[j][k];
+			temp[k] = lettersMapped[i][k] * lettersMapped[j][k];
 		}
 		// console.log(temp)
 		let _temp = temp.filter(e => e === 1);
-		let $temp = temp.join('');
-		if (course.includes(_temp.length) && !ans.includes($temp)) {
-			ans.push($temp);
+		let __temp = temp.join('');
+
+		if (course.includes(_temp.length) && !counter.hasOwnProperty(__temp)) {
+			counter[__temp] = 1;
+		} else if (counter.hasOwnProperty(__temp)) {
+			counter[__temp]++;
 		}
+
+		// if (course.includes(_temp.length) && !ans.includes(__temp)) {
+		// 	ans.push(__temp);
+		// } else if (course.includes(_temp.length) && !ans.includes(__temp)) {
+		// }
 	}
 }
 
+console.log(counter);
+
 console.log('======================================');
 
-console.log(lettersSorted); // 1, 0으로 맵핑후 앞원소부터, 그원소의 바로 뒤부터 끝까지 모든 원소를 비트연산한 결과 >> 1의 합이  course를 만족하는 메뉴를 출력
-console.log('ans:', ans);
+// console.log(lettersSorted); // 1, 0으로 맵핑후 앞원소부터, 그원소의 바로 뒤부터 끝까지 모든 원소를 비트연산한 결과 >> 1의 합이  course를 만족하는 메뉴를 출력
+// console.log('ans:', ans);
 
-let answer = [];
-console.log(lettersSorted[3]);
-ans.forEach(e => {
-	let str = '';
+// let answer = [];
+// ans.forEach(e => {
+// 	let str = '';
 
-	for (let i = 0; i < _length; i++) {
-		if (+e[i]) {
-			str = str.concat(lettersSorted[i]);
-		}
-	}
-	answer.push(str);
-	// console.log('str:', str);
-	// console.log('answer:', answer);
-});
-console.log(answer);
-
-answer.sort();
-console.log(answer);
-
-// let willBeRenamed = mappedOrders.map(e => e & binaryMapping);
-// console.log(willBeRenamed);
-
-// 2진수 비트연산 후 1의 개수 어떻게 뽑지?
-// let mappedOrders = [];
-// mappedOrders = orders.map(e => {
-// 	e.split('').map(i => lettersSorted.indexOf());
+// 	for (let i = 0; i < _length; i++) {
+// 		if (+e[i]) {
+// 			str = str.concat(lettersSorted[i]);
+// 		}
+// 	}
+// 	answer.push(str);
+// 	// console.log('str:', str);
+// 	// console.log('answer:', answer);
 // });
+// console.log(answer);
 
-/* 
-const letterLength = orders.map(e => e.length);
+// answer.sort();
+// console.log(answer);
 
-const maxLengthLetter = ;
-const maxLength = Math.max(...letterLength);
+// // let willBeRenamed = lettersMapped.map(e => e & binaryMapping);
+// // console.log(willBeRenamed);
 
-console.log(maxLength);
-const existingLetters =  // 'ACIXZ'
+// // 2진수 비트연산 후 1의 개수 어떻게 뽑지?
+// // let lettersMapped = [];
+// // lettersMapped = orders.map(e => {
+// // 	e.split('').map(i => lettersSorted.indexOf());
+// // });
 
- */
+// /*
+// const letterLength = orders.map(e => e.length);
+
+// const maxLengthLetter = ;
+// const maxLength = Math.max(...letterLength);
+
+// console.log(maxLength);
+// const existingLetters =  // 'ACIXZ'
+
+//  */

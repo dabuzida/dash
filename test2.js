@@ -199,3 +199,15 @@ console.log(Boolean(+'0'));
 
 let al = aw.concat('', aq[1]);
 console.log('al:', al);
+
+let am = '';
+
+var str = 'ABCDE';
+let av = str.slice(1, str.length);
+
+console.log(typeof str[0]);
+console.log(av);
+
+for (let e of str) {
+	console.log(e);
+}
