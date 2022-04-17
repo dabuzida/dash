@@ -211,3 +211,18 @@ console.log(av);
 for (let e of str) {
 	console.log(e);
 }
+
+let ba= {};
+
+ba['22']=[1]
+console.log(ba)
+if(ba.hasOwnProperty('22')){
+    ba['22'].push(31)
+
+}
+console.log(ba)
+
+
+let xx = 1;
+let `yy{xx}`= 2;
+console.log(`yy{xx}`)

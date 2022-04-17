@@ -52,7 +52,23 @@ const course = [2, 3, 5];
 // const course = [2, 3, 4];
 // result = ["WX", "XY"];
 
-let _course = [];
+let _course = {};
+let ans=[];
+for(let i=0; i<orders.length; i++){
+	for(let j=0; j<course.length; j++){
+		
+		if(_course.hasOwnProperty(course[j]   ))
+		let subString='';
+
+
+
+	}
+}
+
+
+
+
+
 
 for (let i = 0; i < course.length; i++) {
 	let _obj = {};
@@ -71,4 +87,3 @@ for (let i = 0; i < course.length; i++) {
 	// _obj를 _course에 삽입
 }
 
-// _course 사전순 정렬 후 리턴
