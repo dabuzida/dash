@@ -5,7 +5,10 @@ void main() {
   print(p.nameChange(p.name));
 
   People pp = People();
-  
+
+  String a = '1 + 2 + 3 * 8';
+  String z = a.substring(a.length-1);
+  print(z);
 }
 
 class Person {
@@ -28,7 +31,7 @@ class People {
   //   this.age = 11;
   //   this.hobby = 'soccer';
   // }
-  
+
 }
 
 
