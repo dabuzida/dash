@@ -1,14 +1,18 @@
 // null safety
 
+import 'dart:ffi';
+
 void main() {
   Person p = Person();
   print(p.nameChange(p.name));
 
   People pp = People();
 
-  String a = '1 + 2 + 3 * 8';
-  String z = a.substring(a.length-1);
-  print(z);
+  String a = 'abac';
+  print(a[a.length - 1]);
+
+  var acceptor = new List.filled(5, null, growable: false);
+  print(acceptor);
 }
 
 class Person {
