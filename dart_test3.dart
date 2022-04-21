@@ -23,7 +23,45 @@ void main() {
   if (y is double) {
     var num1212 = 12;
   }
-  print(num1212);
+
+  /* var v = <String>['0.5', '+', '0.7'];
+  double num1 = double.parse(v[0]);
+  double num2 = double.parse(v[2]);
+  late double result;
+  String sign = v[1];
+
+  switch (sign) {
+    case '+':
+      result = num1 + num2;
+      break;
+    case '-':
+      result = num1 - num2;
+      break;
+    case '*':
+      result = num1 * num2;
+      break;
+    case '/':
+      result = num1 / num2;
+      break;
+    default:
+  }
+  print(result);
+  print(result.runtimeType); */
+  String vi = 'blind';
+  int ii = 3;
+  String xi = vi.substring(0, vi.length - ii);
+  print(vi);
+  print(xi);
+
+  print(double.parse('4'));
+  print(double.parse('3.22'));
+  print(double.parse('1') + double.parse('3.22'));
+  print(double.parse('3') + double.parse('4.22'));
+
+  // String i = '5/0';
+  // if (double.parse(i).isInfinite) {
+  //   print('hi');
+  // }
 
   /* var x = 0 / 0; //NaN
   var y = 5 / 0; //Infinity
