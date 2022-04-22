@@ -1,6 +1,8 @@
 // let nums = [3,2,4,5];
 // let arr = [...new Set(nums)];
 
+const { map } = require('lodash');
+
 // let x = new Array(200000).fill(0);
 // let x = new Array(2);
 
@@ -212,17 +214,89 @@ for (let e of str) {
 	console.log(e);
 }
 
-let ba= {};
+let ba = {};
 
-ba['22']=[1]
-console.log(ba)
-if(ba.hasOwnProperty('22')){
-    ba['22'].push(31)
-
+ba['22'] = [1];
+console.log(ba);
+if (ba.hasOwnProperty('22')) {
+	ba['22'].push(31);
 }
-console.log(ba)
+console.log(ba);
+console.log('==========================================================================================');
+let iv = {
+	2: {
+		ab: 3,
+		bc: 2,
+	},
+	3: {
+		abc: 1,
+		bcd: 2,
+	},
+};
+console.log(iv);
 
+let v = new Map([
+	['cucumber', 500],
+	['tomatoes', 350],
+	['onion', 50],
+]);
+console.log(v);
+v.set(13, 'dkdkdk');
+console.log(v);
+// 자료구조 후보군 3개
+let dataStructure1 = new Map([
+	[
+		2 + 1,
+		new Map([
+			['ab', 2],
+			['bc', 3],
+		]),
+	],
+	[
+		3,
+		new Map([
+			['bcd', 1],
+			['cdf', 5],
+		]),
+	],
+	[
+		5,
+		new Map([
+			['bcdef', 4],
+			['cdfgh', 2],
+		]),
+	],
+]);
+console.log(dataStructure1);
+let dataStructure2 = {
+	2: new Map([
+		['ab', 2],
+		['bc', 3],
+	]),
 
-let xx = 1;
-let `yy{xx}`= 2;
-console.log(`yy{xx}`)
+	3: new Map([
+		['bcd', 1],
+		['cdf', 5],
+	]),
+
+	5: new Map([
+		['bcdef', 4],
+		['cdfgh', 2],
+	]),
+};
+console.log(dataStructure2);
+let dataStructure3 = [
+	new Map([
+		['ab', 2],
+		['bc', 3],
+	]),
+	new Map([
+		['bcd', 1],
+		['cdf', 5],
+	]),
+	new Map([
+		['bcdef', 4],
+		['cdfgh', 2],
+	]),
+];
+console.log(dataStructure3);
