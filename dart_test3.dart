@@ -1,5 +1,6 @@
 // null safety
 
+import 'dart:collection';
 import 'dart:ffi';
 
 void main() {
@@ -53,15 +54,57 @@ void main() {
   print(vi);
   print(xi);
 
-  print(double.parse('4'));
-  print(double.parse('3.22'));
-  print(double.parse('1') + double.parse('3.22'));
-  print(double.parse('3') + double.parse('4.22'));
+  LinkedHashMap ivi = new LinkedHashMap();
+  // print(ivi);
+  ivi.addAll({'8 × 4': '32'});
+  ivi.addAll({'8 × 5': '32'});
+  ivi.addAll({'8 × 4': '32'});
+  ivi.addAll({'8 × 4': '32'});
+  // print(ivi);
 
-  // String i = '5/0';
-  // if (double.parse(i).isInfinite) {
-  //   print('hi');
-  // }
+  List<Map<String, String>> iv = [
+    {'8 × 4': '32'}
+  ];
+  // print(iv);
+  iv.add({'8 × 4': '32'});
+  iv.add({'8 × 5': '40'});
+  // print(iv);
+
+  // iv.forEach((e) {
+  //   print(e.keys);
+  //   print(e.values);
+  //   print(e.entries);
+  // });
+  // print(iv[0].keys);
+  // print(iv[1].keys);
+  // print(iv[2].keys);
+  // print(iv[0].values);
+
+// map의 keys의 특정키 뽑아내기
+  Map v = {'s': 'as', 'a': 'df', 'c': 'fder'};
+  print(v.keys.last);
+
+/* 
+  Map<String, String> viii = {
+    '8 × 1': '8',
+    '8 × 2': '16',
+    '8 × 3': '24',
+  };
+
+  print(viii);
+  viii.addAll({'8 × 4': '32'});
+  // viii.addAll({'8 × 4': '32'});
+  // viii.addAll({'8 × 4': '32'});
+  // print(viii);
+  viii.addEntries([
+    MapEntry('8 × 4', '32'),
+    // MapEntry('key4', 'D'),
+    // MapEntry('key5', 'E'),
+    // MapEntry('key6', 'Kindacode.com')
+  ]);
+  print(viii);
+
+ */
 
   /* var x = 0 / 0; //NaN
   var y = 5 / 0; //Infinity
