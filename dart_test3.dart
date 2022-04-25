@@ -2,7 +2,6 @@
 
 import 'dart:collection';
 import 'dart:ffi';
-
 void main() {
   /* Person p = Person();
   print(p.nameChange(p.name));
@@ -83,6 +82,15 @@ void main() {
 // map의 keys의 특정키 뽑아내기
   Map v = {'s': 'as', 'a': 'df', 'c': 'fder'};
   print(v.keys.last);
+
+  v.length > 10 ? print('hi') : print('good');
+
+  DateTime now = DateTime.now();
+  String nowStringified = now.toString();
+  
+  print(now);
+  print(nowStringified);
+  print(nowStringified.substring(0, nowStringified.length-7));
 
 /* 
   Map<String, String> viii = {
