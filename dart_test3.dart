@@ -2,6 +2,8 @@
 
 import 'dart:collection';
 import 'dart:ffi';
+import 'dart:math';
+
 void main() {
   /* Person p = Person();
   print(p.nameChange(p.name));
@@ -85,12 +87,22 @@ void main() {
 
   v.length > 10 ? print('hi') : print('good');
 
-  DateTime now = DateTime.now();
-  String nowStringified = now.toString();
-  
-  print(now);
-  print(nowStringified);
-  print(nowStringified.substring(0, nowStringified.length-7));
+  List xix = [];
+  for (int i = 0; i < 10000; i++) {
+    xix.add(Random().nextInt(10000));
+    // int viv = Random().nextInt(1084);
+  }
+  xix.sort();
+
+  print('min: ${xix[0]}, max: ${xix[999]}');
+  // print(xix);
+
+  // DateTime now = DateTime.now();
+  // String nowStringified = now.toString();
+
+  // print(now);
+  // print(nowStringified);
+  // print(nowStringified.substring(0, nowStringified.length-7));
 
 /* 
   Map<String, String> viii = {
@@ -130,6 +142,14 @@ void main() {
   }
   print( 33+y);
   print(y + 33); */
+}
+
+class Box<T> {
+  T? x;
+  void ss(var x) {
+    x = x as T?;
+    print(x);
+  }
 }
 
 class Person {
