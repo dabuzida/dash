@@ -95,7 +95,14 @@ void main() {
   xix.sort();
 
   print('min: ${xix[0]}, max: ${xix[999]}');
-  // print(xix);
+
+  String xixi = '21312.234234234';
+  int   viii = xixi.indexOf('.');
+  String xii = xixi.substring(viii);
+  String xiii = xixi.substring(0, viii +4 );
+  print(viii);
+  print(xii);
+  print(xiii);
 
   // DateTime now = DateTime.now();
   // String nowStringified = now.toString();
