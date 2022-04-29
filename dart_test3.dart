@@ -97,13 +97,14 @@ void main() {
   print('min: ${xix[0]}, max: ${xix[999]}');
 
   String xixi = '21312.234234234';
-  int   viii = xixi.indexOf('.');
+  int viii = xixi.indexOf('.');
   String xii = xixi.substring(viii);
-  String xiii = xixi.substring(0, viii +4 );
+  String xiii = xixi.substring(0, viii + 4);
   print(viii);
   print(xii);
   print(xiii);
 
+  print(Random().nextInt(2));
   // DateTime now = DateTime.now();
   // String nowStringified = now.toString();
 
