@@ -105,6 +105,7 @@ void main() {
   print(xiii);
 
   print(Random().nextInt(2));
+
   // DateTime now = DateTime.now();
   // String nowStringified = now.toString();
 
@@ -150,6 +151,17 @@ void main() {
   }
   print( 33+y);
   print(y + 33); */
+  Person2 p1 = Person2('sdfsdf', 234);
+  print(p1.name);
+  print(p1.age);
+}
+
+class Person2 {
+  String? name;
+  int? age;
+  factory Person2(String i, int v) {
+    return Person2(i, v);
+  }
 }
 
 class Box<T> {
@@ -160,16 +172,16 @@ class Box<T> {
   }
 }
 
-class Person {
-  late String name;
-  Person() {
-    this.name = 'james';
-  }
-  String nameChange(String name) {
-    this.name = name;
-    return name.toUpperCase();
-  }
-}
+// class Person {
+//   late String name;
+//   Person() {
+//     this.name = 'james';
+//   }
+//   String nameChange(String name) {
+//     this.name = name;
+//     return name.toUpperCase();
+//   }
+// }
 
 class People {
   late String name;
