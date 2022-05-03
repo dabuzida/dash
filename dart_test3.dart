@@ -4,7 +4,7 @@ import 'dart:collection';
 import 'dart:ffi';
 import 'dart:math';
 
-void main() {
+void main() async {
   /* Person p = Person();
   print(p.nameChange(p.name));
 
@@ -82,7 +82,7 @@ void main() {
   // print(iv[0].values);
 
 // map의 keys의 특정키 뽑아내기
-  Map v = {'s': 'as', 'a': 'df', 'c': 'fder'};
+  /*  Map v = {'s': 'as', 'a': 'df', 'c': 'fder'};
   print(v.keys.last);
 
   v.length > 10 ? print('hi') : print('good');
@@ -104,7 +104,7 @@ void main() {
   print(xii);
   print(xiii);
 
-  print(Random().nextInt(2));
+  print(Random().nextInt(2)); */
 
   // DateTime now = DateTime.now();
   // String nowStringified = now.toString();
@@ -151,18 +151,31 @@ void main() {
   }
   print( 33+y);
   print(y + 33); */
-  Person2 p1 = Person2('sdfsdf', 234);
-  print(p1.name);
-  print(p1.age);
+
+  Future<String> createOrderMessage() async {
+    String order = await fetchUserOrder();
+    return 'Your order is: $order';
+  }
+
+  print(createOrderMessage());
+  Future.delayed(Duration(seconds: 3), () {
+    print(createOrderMessage());
+  });
+  String asis;
+  print(22);
+// Future.delayed(const Duration(seconds: 2), () => print(39.455));
+  /* Future<dynamic> sk = */
+  // print(sk);
 }
 
-class Person2 {
-  String? name;
-  int? age;
-  factory Person2(String i, int v) {
-    return Person2(i, v);
-  }
-}
+Future<String> fetchUserOrder() => Future.delayed(const Duration(seconds: 2), () => 'Large Latte');
+// class Person2 {
+//   String? name;
+//   int? age;
+//   factory Person2(String i, int v) {
+//     return Person2(i, v);
+//   }
+// }
 
 class Box<T> {
   T? x;
