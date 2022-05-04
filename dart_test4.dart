@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 // Synchronous vs Asynchronous, Future, Duration, async, await
@@ -48,10 +49,61 @@ void main() async {
   // print(await Future.delayed(Duration(seconds: 0), () => fetchUserOrder()));
   // print(await fetchUserOrder());
 
-  final aaa = receipt();
-  print( aaa);
+  // final aaa = receipt();
+  // print(aaa);
 
-  // print(aaa.runtimeType);
+  String jsonString = '''
+      {
+        "name" : "bebe",
+        "age" : 26,
+        "is_man" : true
+      }
+      ''';
+  print('i: $jsonString');
+  Map<String, dynamic> jsonObject = json.decode(jsonString);
+  // Map<String, dynamic> jsonData = jsonDecode(jsonString);
+  print('ii: $jsonObject');
+  // String xi = json.encode(jsonData);
+  // print(xi);
+
+  // jsonData.forEach((key, value) {
+  //   print('$key: $value');
+  // });
+
+  User jsonInstance = User.ivi(jsonObject);
+  print('iii: $jsonInstance');
+  // User user = User.ivi(jsonData);
+  // print(user);
+}
+
+class User {
+  late String name;
+  late int age;
+  late bool isMan;
+  /*  User({
+    required this.name,
+    required this.age,
+    required this.isMan,
+  }); */
+  // User({required String name, required int age, required bool isMan}) {
+  //   this.name = name;
+  //   this.age = age;
+  //   this.isMan = isMan;
+  // }
+
+  // factory User.fromJson(Map<String, dynamic> jsonData) {
+  //   return User(
+  //     name: jsonData['name'],
+  //     age: jsonData['age'],
+  //     isMan: jsonData['is_man'],
+  //   );
+  // }
+
+  User.ivi(Map<String, dynamic> json) {
+    name = json['name'];
+    age = json['age'];
+    isMan = json['is_man'];
+  }
 }
 
 Future<int> receipt() async {
