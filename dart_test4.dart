@@ -60,7 +60,7 @@ void main() async {
       }
       ''';
   print('i: $jsonString');
-  Map<String, dynamic> jsonObject = json.decode(jsonString);
+  Map<String, dynamic> jsonObject = jsonDecode(jsonString);
   // Map<String, dynamic> jsonData = jsonDecode(jsonString);
   print('ii: $jsonObject');
   // String xi = json.encode(jsonData);
@@ -74,6 +74,30 @@ void main() async {
   print('iii: $jsonInstance');
   // User user = User.ivi(jsonData);
   // print(user);
+
+  print(jsonInstance.name);
+
+  String jsonListString = '''
+[
+{"name" : "kim",
+"age":23,
+"is_man" : true
+},
+{"name":"lee",
+"age":33,"is_man" : true}
+]''';
+  print(jsonListString);
+  List jsonObjectList = jsonDecode(jsonListString);
+  print(jsonObjectList);
+  List<User> jsonInstanceList = jsonObjectList.map((e) => User.ivi(e)).toList();
+  print(jsonInstanceList);
+
+  // var qi = [1, 2, 3];
+  // var qq = qi.map((e) => e + 1);
+  // print(qi);
+  // print(qq);
+  // print(qi.runtimeType);
+  // print(qq.runtimeType);
 }
 
 class User {
