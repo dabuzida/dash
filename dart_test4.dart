@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'dart:math';
+
 // Synchronous vs Asynchronous, Future, Duration, async, await
 void main() async {
   /* 1.Synchronous vs Asynchronous 비교 */
@@ -86,18 +88,25 @@ void main() async {
 {"name":"lee",
 "age":33,"is_man" : true}
 ]''';
-  print(jsonListString);
   List jsonObjectList = jsonDecode(jsonListString);
-  print(jsonObjectList);
   List<User> jsonInstanceList = jsonObjectList.map((e) => User.ivi(e)).toList();
-  print(jsonInstanceList);
+  // print(jsonListString);
+  // print(jsonObjectList);
+  // print(jsonInstanceList);
 
-  // var qi = [1, 2, 3];
-  // var qq = qi.map((e) => e + 1);
-  // print(qi);
-  // print(qq);
-  // print(qi.runtimeType);
-  // print(qq.runtimeType);
+  List xu = [];
+  List xa = [];
+  List xb = [];
+  for (int i = 0; i < 10; i++) {
+    xu.add(Random().nextInt(10));
+  }
+  print(xu);
+  xa = xu.sublist(0,1);
+  xb = xu.sublist(4, xu.length);
+  print(xu);
+  print(xa);
+  print(xb);
+
 }
 
 class User {
