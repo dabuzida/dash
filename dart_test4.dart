@@ -100,13 +100,16 @@ void main() async {
   for (int i = 0; i < 10; i++) {
     xu.add(Random().nextInt(10));
   }
-  print(xu);
-  xa = xu.sublist(0,1);
-  xb = xu.sublist(4, xu.length);
-  print(xu);
-  print(xa);
-  print(xb);
-
+  // print(xu);
+  // xa = xu.sublist(0,1);
+  // xb = xu.sublist(4, xu.length);
+  // print(xu);
+  // print(xa);
+  // print(xb);
+  final List ci = [];
+  ci.add(330);
+  ci.add('sdfsd');
+  print(ci);
 }
 
 class User {
