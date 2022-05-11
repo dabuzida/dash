@@ -106,10 +106,12 @@ void main() async {
   // print(xu);
   // print(xa);
   // print(xb);
-  final List ci = [];
-  ci.add(330);
-  ci.add('sdfsd');
-  print(ci);
+  
+  
+
+
+
+
 }
 
 class User {

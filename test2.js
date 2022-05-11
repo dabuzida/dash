@@ -300,3 +300,20 @@ let dataStructure3 = [
 	]),
 ];
 console.log(dataStructure3);
+
+/* // JavaScript 함수 꼴
+// 함수선언식
+function i(){} o
+i(){} x
+function (){} x
+
+// 함수표현식
+let v = () => 11; o
+let v = () => {
+	...
+	return 11;
+}; o
+let v = function(){}; o
+let v = function i(){}; o
+let v =  (){}; x   
+let v =  i(){}; x   */
