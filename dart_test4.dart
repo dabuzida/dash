@@ -106,13 +106,35 @@ void main() async {
   // print(xu);
   // print(xa);
   // print(xb);
-  
-  
+  // List bl = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  // print(bl);
+  // bl.removeAt(2);
+  // print(bl);
+  // bl.insert(2, 111);
+  // print(bl);
+  List bb = ['bn-IN-Wavenet-B', 'fr-CA-Wavenet-C', 'en-US-Wavenet-C', 'en-AU-Wavenet-C', 'en-US-Standard-C', 'ja-JP-Wavenet-C'];
+  print(bb);
+  List bi = bb.sublist(1, 3);
+  print(bb);
+  print(bi);
 
+  List bk = [1, 2, 3, 4, 5, 6, 7, 234234, 1242314, 4544, 777, 8889];
+  print(bk);
+  List bs = bk.sublist(1, 5);
+  print(bk);
 
-
-
+  print(bs);
+  // bb.sort();
+  // print(bb);
+  // List bc = ['sdfsdfsd', ...bb];
+  // print(bc);
+  // List bd = List.from(bc);
+  // print(bd);
+  // print(bd.indexOf('sdfsdfsd'));
+  // print('sdfsdf'.substring(1, 3));
 }
+
+enum MediaQuerySize { S, M, L }
 
 class User {
   late String name;
