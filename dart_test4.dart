@@ -132,6 +132,10 @@ void main() async {
   // print(bd);
   // print(bd.indexOf('sdfsdfsd'));
   // print('sdfsdf'.substring(1, 3));
+
+  for (var e in [{'a':11, "b":12}, ]) {
+    print(e);
+  }
 }
 
 enum MediaQuerySize { S, M, L }
