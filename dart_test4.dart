@@ -133,9 +133,13 @@ void main() async {
   // print(bd.indexOf('sdfsdfsd'));
   // print('sdfsdf'.substring(1, 3));
 
-  for (var e in [{'a':11, "b":12}, ]) {
-    print(e);
-  }
+  Map _menuState = {
+    'cursor_in': [1],
+    'cursorIn': [4],
+    'cursor_out': [2],
+  };
+  print(_menuState['cursor_in']);
+  print(_menuState['cursorIn']);
 }
 
 enum MediaQuerySize { S, M, L }
