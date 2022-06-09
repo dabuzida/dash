@@ -1,19 +1,3 @@
-// function work(callback) {
-// 	setTimeout(() => {
-// 		const start = Date.now();
-// 		for (let i = 0; i < 1000000000; i++) {}
-// 		const end = Date.now();
-// 		console.log(end - start + 'ms');
-// 		callback();
-// 	}, 0);
-// }
-
-// console.log('start');
-// work(() => {
-// 	console.log('finish');
-// });
-// console.log('next');
-
 function increaseAndPrint(n) {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {

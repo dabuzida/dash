@@ -25,6 +25,8 @@ function func5() {
 }
 function func6() {
 	console.log('func6');
+	for (let i = 0; i < 1000000000; i++) {}
+	console.log('fin');
 }
 
 func1();

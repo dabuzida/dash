@@ -5,3 +5,7 @@ await
 -js는 await을 만나면 프라미스가 처리될때까지 기다림
 
 -함수에 async를 사용하면 함수는 Promise를 반환한다. 
+
+비동기 구현은 setTimeout 함수를 이용한다
+Promise, async, await은 setTimeout으로 비동기를 구현할때, 
+편리하게 짜게 해주고, 코드를 깔끔하게 해주는 보조도구일뿐
