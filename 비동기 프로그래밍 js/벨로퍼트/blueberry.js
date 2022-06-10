@@ -33,15 +33,21 @@ function _Promise() {
 // Promise: 성공시, resolve 호출하기
 function promiseSucceeded() {
 	const myPromise = new Promise((resolve, reject) => {
+		// resolve();
+		// reject(new Error('heeeeeeeeeei'));
 		setTimeout(() => {
 			let transmittedArgument = 4918;
 			resolve(transmittedArgument);
 		}, 1000);
 	});
 
-	myPromise.then(receivedArgument => {
-		console.log(receivedArgument);
-	});
+	myPromise
+		.then(receivedArgument => {
+			console.log(receivedArgument);
+		})
+		.catch(e => {
+			console.log(e);
+		});
 }
 // promiseSucceeded();
 
@@ -49,8 +55,9 @@ function promiseSucceeded() {
 function promiseFailed() {
 	const myPromise = new Promise((resolve, reject) => {
 		setTimeout(() => {
-			let _error = new Error();
-			_error.name = '실패구현 Error';
+			let _error = new Error('실패구현'); // 1
+			// let _error = new Error(); //2
+			// _error.name = '실패구현 Error';
 			reject(_error);
 		}, 1000);
 	});
@@ -74,7 +81,7 @@ function exampleMakingPromise() {
 					const _error = new Error();
 					_error.name = 'ValueIsThreeError';
 					reject(_error);
-					return;
+					// return;
 				}
 				console.log(transmittedValue);
 				resolve(transmittedValue);
