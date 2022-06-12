@@ -21,13 +21,12 @@ async function z() {
   let zz = new Promise((resolve, reject) => {
     setTimeout(() => resolve("z function"), 1000);
   });
-  let a = Date.now();
   // for (let i = 0; i < 1000000000; i++) {}
-  let result = await zz;
-  let b = Date.now();
-  console.log(b - a);
+  let result = await zz; // 호출되면 여기서 기다렸다 진행됨. fetch는 안그럼
+  console.log("hi");
+  console.log(result);
   console.log("bye");
-  return result;
+  // return result;
 }
 
 function u() {
@@ -37,6 +36,7 @@ console.log("start");
 // q(); // async await으로 구현
 // s.then((resolve) => console.log(resolve)); // then으로 구현
 // t().then((resolve) => console.log(resolve));
-z().then((resolve) => console.log(resolve));
+z();
+// z().then((resolve) => console.log(resolve));
 // u().then((resolve) => console.log(resolve));
 console.log("fin");
