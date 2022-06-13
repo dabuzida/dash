@@ -3,7 +3,22 @@
 -await은 async가 붙은 함수 안에서만 써야함. 아니면 오류뜸
 -await는 promise 앞에 쓰여서, js가 해당 promise가 종료될때까지 기다리게 함
 
+
+
 -js는 await을 만나면 프라미스가 처리될때까지 기다림
 비동기 구현은 setTimeout 함수를 이용한다
 Promise, async, await은 setTimeout으로 비동기를 구현할때, 
 편리하게 짜게 해주고, 코드를 깔끔하게 해주는 보조도구일뿐
+-new Promise() 내에 resolve를 여러개 써도 제일 처음 만난 resolve가 반환값
+
+
+# 생활코딩 프라미스 
+-프라미스를 만들땐
+
+
+
+-await는 프라미스를 만나면 처리될때까지 기다림
+pending이 아닌 fulfilled나 rejected가 될때까지 
+
+
+-프라미스 객체는 resolve가 호출되면 상태가 바뀌고 결과도 만들어진다
