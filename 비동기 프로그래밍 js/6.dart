@@ -1,3 +1,5 @@
+import '1.dart';
+
 Future<String> work() {
   return Future.delayed(Duration(seconds: 1), () => '작업1');
 }
@@ -18,15 +20,17 @@ Future<void> delayed2() {
 // 비동기 작업만 await로 지연 주기
 // 작업1 >> 지연1초 >> 작업2 >> 지연1초
 void main() async {
-  void asyncFunc() async {
+  void asyncFunc()  {
     print('asyncFunc start');
-    String _work = await work();
-    print(_work);
-    await delayed();
-    String _work2 = await work2();
-    print(_work2);
-    await delayed2();
+    work()
+      .then((value) => print(value))
+      .then((value) => delayed())
+      .then((value) => work2())
+      .then((value) => print(value))
+      .then((value) => delayed2());    
     print('asyncFunc end');
+    // print(_work);
+    // print(_work2);
   }
 
   print('start');

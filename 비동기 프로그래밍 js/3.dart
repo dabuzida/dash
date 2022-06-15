@@ -4,7 +4,7 @@ void main() async {
     return Future.delayed(Duration(seconds: 1), () {
       return "Hello Future!!";
     });
-    
+
     // 2
     // return Future.delayed(Duration(seconds: 1), () => "Hello Future!!");
   }
@@ -12,6 +12,8 @@ void main() async {
   print('start');
   Future<String> r = f();
   print(r);
+  await Future.delayed(Duration(seconds: 1));
+  r.then((value) => print(value));
   // f().then((resolve) => print(resolve));
   print('end');
 
