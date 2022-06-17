@@ -26,7 +26,12 @@ Future<int> _initState() async {
 }
 
 void main() async {
-  await _initState();
+  // await _initState();
+  print(1);
+  Future.delayed(Duration(seconds: 2), () {
+    print(3);
+  });
+  print(2);
 
   // void asyncFunc() {
   //   print('asyncFunc start');
